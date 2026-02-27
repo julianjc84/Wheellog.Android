@@ -46,7 +46,6 @@ Let's start
 - Insert URL `https://github.com/Wheellog/Wheellog.Android.git` and click on `Clone`
 - Install SDK and connect android device
 - Setup private tokens in `local.properties`
-  - [AppMetrica](https://appmetrica.yandex.ru/) `metrica_api`
   - [ElectroClub](https://electro.club/) `ec_accessToken` _(optional)_
 - Click `Run` button - Enjoy!
 

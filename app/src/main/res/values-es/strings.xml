@@ -184,4 +184,6 @@
 	<string name="pedal_horizont_description">Ajuste horizontal de los pedales.</string>
     <string name="volt">V</string>
 	<string name="watt">W</string>
+    <string name="private_policy_title">Política de privacidad</string>
+    <string name="private_policy"><![CDATA[WheelLog no recopila, almacena ni carga ningún dato personal ni estadísticas de uso. Para más detalles, consulte nuestra <a href=\"https://github.com/Wheellog/Wheellog.Android/wiki/Privacy-Policy\">Política de privacidad</a> y los <a href=\"https://github.com/Wheellog/Wheellog.Android/wiki/Terms-&-Conditions\">Términos y condiciones</a>.]]></string>
 </resources>

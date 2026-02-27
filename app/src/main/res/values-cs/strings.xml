@@ -184,4 +184,6 @@
 	<string name="pedal_horizont_description">Úprava náklonu pedálů</string>
     <string name="volt">V</string>
 	<string name="watt">W</string>
+    <string name="private_policy_title">Zásady ochrany osobních údajů</string>
+    <string name="private_policy"><![CDATA[WheelLog neshromažďuje, neukládá ani neodesílá žádné osobní údaje ani statistiky používání. Další podrobnosti naleznete v našich <a href=\"https://github.com/Wheellog/Wheellog.Android/wiki/Privacy-Policy\">Zásadách ochrany osobních údajů</a> a <a href=\"https://github.com/Wheellog/Wheellog.Android/wiki/Terms-&-Conditions\">Podmínkách používání</a>.]]></string>
 </resources>

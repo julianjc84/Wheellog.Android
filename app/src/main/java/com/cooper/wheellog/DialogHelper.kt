@@ -1,6 +1,5 @@
 package com.cooper.wheellog
 
-//import com.yandex.metrica.YandexMetrica
 import android.annotation.SuppressLint
 import android.content.Context
 import android.content.DialogInterface
@@ -239,7 +238,6 @@ object DialogHelper : KoinComponent {
 
         val inflater: LayoutInflater = LayoutInflater.from(mainActivity)
         val binding = PrivacyPolicyBinding.inflate(inflater, null, false)
-        val agree = binding.agreeWithPolicy
         val policyText = binding.policyLinks
         policyText.movementMethod = LinkMovementMethod.getInstance()
         policyText.text = if (Build.VERSION.SDK_INT > Build.VERSION_CODES.M) {
@@ -252,27 +250,9 @@ object DialogHelper : KoinComponent {
             .setCancelable(false)
             .show()
 
-        agree.setOnCheckedChangeListener { _: CompoundButton, checked: Boolean ->
-            if (checked) {
-                binding.okButton.visibility = View.VISIBLE
-                binding.btnCancel.visibility = View.GONE
-            } else {
-                binding.okButton.visibility = View.GONE
-                binding.btnCancel.visibility = View.VISIBLE
-            }
-        }
         binding.okButton.setOnClickListener {
             appConfig.privatePolicyAccepted = true
-            appConfig.yandexMetricaAccepted = binding.agreeWithMetrica.isChecked
-//            YandexMetrica.setStatisticsSending(
-//                mainActivity.applicationContext,
-//                binding.agreeWithMetrica.isChecked
-//            )
             dialog.dismiss()
-        }
-        binding.btnCancel.setOnClickListener {
-            dialog.dismiss()
-            mainActivity.finish()
         }
     }
 
