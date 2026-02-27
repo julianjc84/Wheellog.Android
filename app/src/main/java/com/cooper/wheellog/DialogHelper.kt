@@ -26,6 +26,7 @@ import com.cooper.wheellog.utils.Constants
 import com.cooper.wheellog.utils.PermissionsUtil
 import org.koin.core.component.KoinComponent
 import org.koin.core.component.inject
+import java.util.Locale
 
 object DialogHelper : KoinComponent {
     private val appConfig: AppConfig by inject()
@@ -47,7 +48,7 @@ object DialogHelper : KoinComponent {
         if (s.isNotEmpty()) {
             val value = (s.toDouble() * 10).toInt()
             if (value > seekBar.max) {
-                editText?.setText(String.format("%.1f", seekBar.max / 10f))
+                editText?.setText(String.format(Locale.ROOT, "%.1f", seekBar.max / 10f))
             } else {
                 seekBar.progress = value
             }
@@ -161,7 +162,7 @@ object DialogHelper : KoinComponent {
             SeekBar.OnSeekBarChangeListener {
             override fun onProgressChanged(seekBar: SeekBar, progress: Int, fromUser: Boolean) {
                 if (fromUser) {
-                    binding.speedValue.editText?.setText(String.format("%.1f", progress / 10f))
+                    binding.speedValue.editText?.setText(String.format(Locale.ROOT, "%.1f", progress / 10f))
                 }
             }
 
@@ -180,7 +181,7 @@ object DialogHelper : KoinComponent {
             SeekBar.OnSeekBarChangeListener {
             override fun onProgressChanged(seekBar: SeekBar, progress: Int, fromUser: Boolean) {
                 if (fromUser) {
-                    binding.voltageValue.editText?.setText(String.format("%.1f", progress / 10f))
+                    binding.voltageValue.editText?.setText(String.format(Locale.ROOT, "%.1f", progress / 10f))
                 }
             }
 
@@ -199,8 +200,8 @@ object DialogHelper : KoinComponent {
         val defaultFromTemplate =
             templates.filter { it.key.split(" ", "/").contains(model) }.values.firstOrNull()
                 ?: Pair(500, 1000)
-        binding.speedValue.editText?.setText(String.format("%.1f", defaultFromTemplate.first / 10f))
-        binding.voltageValue.editText?.setText(String.format("%.1f", defaultFromTemplate.second / 10f))
+        binding.speedValue.editText?.setText(String.format(Locale.ROOT, "%.1f", defaultFromTemplate.first / 10f))
+        binding.voltageValue.editText?.setText(String.format(Locale.ROOT, "%.1f", defaultFromTemplate.second / 10f))
 
         AlertDialog.Builder(context)
             .setCancelable(false)

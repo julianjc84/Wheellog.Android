@@ -256,7 +256,7 @@ public class NinebotZAdapter extends BaseAdapter {
             case 46: err_text1 = "Unknown error"; break;
             default: err_text1 = "Error"; break;
         }
-        return String.format("Err:%d %s", errorCode, err_text1);
+        return String.format(Locale.ROOT, "Err:%d %s", errorCode, err_text1);
     }
 
     @Override
@@ -1026,7 +1026,7 @@ public class NinebotZAdapter extends BaseAdapter {
             byte[] gammaTemp = Arrays.copyOfRange(data, 0, data.length);
             StringBuilder gamma_text = new StringBuilder();
             for (byte datum : data) {
-                gamma_text.append(String.format("%02X", datum));
+                gamma_text.append(String.format(Locale.ROOT, "%02X", datum));
             }
             Timber.i("New key: %s", gamma_text.toString());
             return gammaTemp;
@@ -1084,9 +1084,9 @@ public class NinebotZAdapter extends BaseAdapter {
         void parseVersionNumber() {
             String versionNumber = "";
             WheelData wd = WheelData.getInstance();
-            versionNumber += String.format("%X.", (data[1] & 0x0f));
-            versionNumber += String.format("%1X.", (data[0] >> 4) & 0x0f);
-            versionNumber += String.format("%1X", (data[0]) & 0x0f);
+            versionNumber += String.format(Locale.ROOT, "%X.", (data[1] & 0x0f));
+            versionNumber += String.format(Locale.ROOT, "%1X.", (data[0] >> 4) & 0x0f);
+            versionNumber += String.format(Locale.ROOT, "%1X", (data[0]) & 0x0f);
             int error1 = data[2];
             int error2 = data[3];
             int warn1 = data[4];
@@ -1109,7 +1109,7 @@ public class NinebotZAdapter extends BaseAdapter {
             int year = activationDate>>9;
             int mounth = (activationDate>>5) & 0x0f;
             int day = activationDate & 0x1f;
-            String activationDateStr = String.format("%02d.%02d.20%02d", day, mounth,year);
+            String activationDateStr = String.format(Locale.ROOT, "%02d.%02d.20%02d", day, mounth,year);
             //wd.setActivationDate(activationDateStr); fixme
         }
 
@@ -1148,9 +1148,9 @@ public class NinebotZAdapter extends BaseAdapter {
             WheelData wd = WheelData.getInstance();
             String serialNumber = new String(data, 0, 14);
             String versionNumber = "";
-            versionNumber += String.format("%X.", (data[15]));
-            versionNumber += String.format("%1X.", (data[14] >> 4) & 0x0f);
-            versionNumber += String.format("%1X", (data[14]) & 0x0f);
+            versionNumber += String.format(Locale.ROOT, "%X.", (data[15]));
+            versionNumber += String.format(Locale.ROOT, "%1X.", (data[14] >> 4) & 0x0f);
+            versionNumber += String.format(Locale.ROOT, "%1X", (data[14]) & 0x0f);
             int factoryCap = MathsUtil.shortFromBytesLE(data, 16);
             int actualCap = MathsUtil.shortFromBytesLE(data, 18);
             int fullCycles = MathsUtil.shortFromBytesLE(data, 22);
@@ -1159,7 +1159,7 @@ public class NinebotZAdapter extends BaseAdapter {
             int year = mfgDate >> 9;
             int mounth = (mfgDate >> 5) & 0x0f;
             int day = mfgDate & 0x1f;
-            String mfgDateStr = String.format("%02d.%02d.20%02d", day, mounth, year);
+            String mfgDateStr = String.format(Locale.ROOT, "%02d.%02d.20%02d", day, mounth, year);
             SmartBms bms = bmsnum == 1 ? wd.getBms1() : wd.getBms2();
             bms.setSerialNumber(serialNumber);
             bms.setVersionNumber(versionNumber);

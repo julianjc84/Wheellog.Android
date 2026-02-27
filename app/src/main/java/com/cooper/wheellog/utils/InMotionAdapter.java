@@ -1171,7 +1171,7 @@ public class InMotionAdapter extends BaseAdapter {
 
             StringBuilder hex = new StringBuilder("[");
             for (int c : data) {
-                hex.append(String.format("%02X", (c & 0xFF)));
+                hex.append(String.format(Locale.ROOT, "%02X", (c & 0xFF)));
             }
             hex.append("]");
             switch (alertId) {
@@ -1241,7 +1241,7 @@ public class InMotionAdapter extends BaseAdapter {
             }
 
             for (int j = 0; j < 8; j++) {
-                serialNumber.append(String.format("%02X", ex_data[7 - j]));
+                serialNumber.append(String.format(Locale.ROOT, "%02X", ex_data[7 - j]));
             }
 
             WheelData wd = WheelData.getInstance();

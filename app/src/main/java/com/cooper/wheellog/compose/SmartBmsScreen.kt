@@ -7,6 +7,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.cooper.wheellog.WheelData
+import java.util.Locale
 
 @Composable
 fun SmartBmsScreen() {
@@ -34,12 +35,12 @@ fun SmartBmsScreen() {
 @Composable
 private fun BmsBlock(bms: com.cooper.wheellog.utils.SmartBms) {
     Column(verticalArrangement = Arrangement.spacedBy(4.dp)) {
-        Text("Voltage: ${String.format("%.2f V", bms.voltage)}")
-        Text("Current: ${String.format("%.2f A", bms.current)}")
-        Text("Temp 1: ${String.format("%.1f°C", bms.temp1)}")
-        Text("Temp 2: ${String.format("%.1f°C", bms.temp2)}")
-        Text("Max Cell: ${String.format("%.3f V", bms.maxCell)}")
-        Text("Min Cell: ${String.format("%.3f V", bms.minCell)}")
-        Text("Cell Diff: ${String.format("%.3f V", bms.cellDiff)}")
+        Text("Voltage: ${String.format(Locale.ROOT, "%.2f V", bms.voltage)}")
+        Text("Current: ${String.format(Locale.ROOT, "%.2f A", bms.current)}")
+        Text("Temp 1: ${String.format(Locale.ROOT, "%.1f°C", bms.temp1)}")
+        Text("Temp 2: ${String.format(Locale.ROOT, "%.1f°C", bms.temp2)}")
+        Text("Max Cell: ${String.format(Locale.ROOT, "%.3f V", bms.maxCell)}")
+        Text("Min Cell: ${String.format(Locale.ROOT, "%.3f V", bms.minCell)}")
+        Text("Cell Diff: ${String.format(Locale.ROOT, "%.3f V", bms.cellDiff)}")
     }
 }

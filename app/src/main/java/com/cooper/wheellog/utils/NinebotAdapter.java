@@ -473,7 +473,7 @@ public class NinebotAdapter extends BaseAdapter {
             byte [] gammaTemp = Arrays.copyOfRange(data, 0, data.length);
             StringBuilder gamma_text = new StringBuilder();
             for (byte datum : data) {
-                gamma_text.append(String.format("%02X", datum));
+                gamma_text.append(String.format(Locale.ROOT, "%02X", datum));
             }
             Timber.i("New key: %s", gamma_text.toString());
             return gammaTemp;
@@ -507,7 +507,7 @@ public class NinebotAdapter extends BaseAdapter {
             int year = activationDate>>9;
             int mounth = (activationDate>>5) & 0x0f;
             int day = activationDate & 0x1f;
-            String activationDateStr = String.format("%02d.%02d.20%02d", day, mounth,year);
+            String activationDateStr = String.format(Locale.ROOT, "%02d.%02d.20%02d", day, mounth,year);
             return new activationStatus(activationDateStr);
         }
 

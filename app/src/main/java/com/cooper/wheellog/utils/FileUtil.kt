@@ -287,7 +287,7 @@ class FileUtil(val context: Context) {
                 MediaStore.Downloads._ID
             )
             val where =
-                String.format("%s = 'text/comma-separated-values'", MediaStore.Downloads.MIME_TYPE)
+                String.format(Locale.ROOT, "%s = 'text/comma-separated-values'", MediaStore.Downloads.MIME_TYPE)
             val cursor = context.contentResolver.query(
                 uri,
                 projection,
@@ -378,7 +378,7 @@ class FileUtil(val context: Context) {
                 MediaStore.Downloads._ID
             )
             val where =
-                String.format("%s = 'text/comma-separated-values'", MediaStore.Downloads.MIME_TYPE)
+                String.format(Locale.ROOT, "%s = 'text/comma-separated-values'", MediaStore.Downloads.MIME_TYPE)
             val cursor = context.contentResolver.query(
                 uri,
                 projection,

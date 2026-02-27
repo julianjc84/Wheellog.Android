@@ -169,7 +169,7 @@ class TripAdapter(var context: Context, private var tripModels: ArrayList<TripMo
         }
 
         private fun format(value: Float): String {
-            return String.format("%.2f", value)
+            return String.format(Locale.ROOT, "%.2f", value)
         }
 
         private fun setDescFromDb(trip: TripDataDbEntry?) {

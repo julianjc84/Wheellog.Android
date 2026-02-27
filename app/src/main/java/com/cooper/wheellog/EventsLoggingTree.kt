@@ -44,7 +44,7 @@ class EventsLoggingTree(var context: Context, var mainAdapter: MainPageAdapter) 
 
     override fun log(priority: Int, tag: String?, message: String, t: Throwable?) {
         try {
-            val formattedMessage = String.format("%s - %s%n", timeFormatter.format(Date()), message)
+            val formattedMessage = String.format(Locale.ROOT, "%s - %s%n", timeFormatter.format(Date()), message)
             outputStream.write(formattedMessage.toByteArray())
             outputStream.flush()
             logEvent(formattedMessage)
