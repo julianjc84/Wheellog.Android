@@ -1,5 +1,7 @@
 package com.wheellog.shared
 
+import java.util.Locale
+
 class SmartDouble: Comparable<SmartDouble> {
     var value: Double = 0.0
         set(value) {
@@ -12,15 +14,15 @@ class SmartDouble: Comparable<SmartDouble> {
     var min: Double = Double.MAX_VALUE
 
     fun minString(): String {
-        return String.format("%.1f", min)
+        return String.format(Locale.ROOT, "%.1f", min)
     }
 
     fun maxString(): String {
-        return String.format("%.1f", max)
+        return String.format(Locale.ROOT, "%.1f", max)
     }
 
     override fun toString(): String {
-        return String.format("%.1f", value)
+        return String.format(Locale.ROOT, "%.1f", value)
     }
 
     override fun compareTo(other: SmartDouble): Int {

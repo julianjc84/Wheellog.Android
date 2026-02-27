@@ -1023,12 +1023,12 @@ public class InmotionAdapterV2 extends BaseAdapter {
             int sec = (int)(mRideTime % 60);
             int min = (int)((mRideTime / 60) % 60);
             int hour = (int) (mRideTime/ 3600);
-            String mRideTimeStr = String.format("%d:%02d:%02d",hour,min,sec);
+            String mRideTimeStr = String.format(Locale.ROOT, "%d:%02d:%02d",hour,min,sec);
             long mPowerOnTime = MathsUtil.intFromBytesLE(data, 16);
             sec = (int)(mPowerOnTime % 60);
             min = (int)((mPowerOnTime / 60) % 60);
             hour = (int) (mPowerOnTime/ 3600);
-            String mPowerOnTimeStr = String.format("%d:%02d:%02d",hour,min,sec);
+            String mPowerOnTimeStr = String.format(Locale.ROOT, "%d:%02d:%02d",hour,min,sec);
             wd.setTotalDistance(mTotal*10);
             return false;
         }

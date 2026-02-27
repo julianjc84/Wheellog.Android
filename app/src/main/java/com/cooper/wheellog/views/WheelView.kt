@@ -73,7 +73,7 @@ class WheelView(context: Context, attrs: AttributeSet?) : View(context, attrs), 
     private var mAverageSpeed = 0.0
     private var useMph: Boolean
     private var mWheelModel = ""
-    private val versionString = String.format("ver %s %s", BuildConfig.VERSION_NAME, BuildConfig.BUILD_DATE)
+    private val versionString = String.format(Locale.ROOT, "ver %s %s", BuildConfig.VERSION_NAME, BuildConfig.BUILD_DATE)
     private var outerStrokeWidth = 0f
     private var innerStrokeWidth = 0f
     private var middleStrokeWidth = 0f
@@ -768,7 +768,7 @@ class WheelView(context: Context, attrs: AttributeSet?) : View(context, attrs), 
         if (appConfig.useShortPwm || isInEditMode) {
             textPaint.textSize = speedTextKPHSize * 1.2f
             if (!appConfig.swapSpeedPwm) {
-                val pwm = String.format("%02.0f%% / %02.0f%%", WheelData.getInstance().calculatedPwm, WheelData.getInstance().maxPwm)
+                val pwm = String.format(Locale.ROOT, "%02.0f%% / %02.0f%%", WheelData.getInstance().calculatedPwm, WheelData.getInstance().maxPwm)
                 textPaint.color = pwmColor
                 canvas.drawText(pwm, outerArcRect.centerX(), speedTextRect.bottom + speedTextKPHHeight * 3.3f, textPaint)
                 textPaint.color = getColorEx(R.color.wheelview_text)
@@ -956,7 +956,7 @@ class WheelView(context: Context, attrs: AttributeSet?) : View(context, attrs), 
         if (appConfig.useShortPwm || isInEditMode) {
             textPaint.textSize = speedTextKPHSize * 1.2f
             if (!appConfig.swapSpeedPwm) {
-                val pwm = String.format("%02.0f%% / %02.0f%%", WheelData.getInstance().calculatedPwm, WheelData.getInstance().maxPwm)
+                val pwm = String.format(Locale.ROOT, "%02.0f%% / %02.0f%%", WheelData.getInstance().calculatedPwm, WheelData.getInstance().maxPwm)
                 textPaint.color = pwmColor
                 canvas.drawText(pwm, outerArcRect.centerX(), speedTextRect.bottom + speedTextKPHHeight * 3.3f, textPaint)
                 textPaint.color = getColorEx(R.color.ajdm_wheelview_text)

@@ -190,8 +190,8 @@ fun sliderPref(
                             isError = true
                             errorText = when {
                                 f == null -> invalidNumberText
-                                f > maxV -> "Max = ${String.format(format, maxV)}"
-                                f < minV -> "Min = ${String.format(format, minV)}"
+                                f > maxV -> "Max = ${String.format(Locale.ROOT, format, maxV)}"
+                                f < minV -> "Min = ${String.format(Locale.ROOT, format, minV)}"
                                 else -> ""
                             }
                         }

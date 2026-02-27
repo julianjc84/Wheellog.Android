@@ -31,7 +31,7 @@ public class FileLoggingTree extends Timber.DebugTree {
     protected void log(int priority, String tag, String message, Throwable t) {
         try {
             if (fileUtil.prepareFile(fileName)) {
-                fileUtil.writeLine(String.format("<p><b>%s</b>%s</p>", logFormat.format(new Date()), message));
+                fileUtil.writeLine(String.format(Locale.ROOT, "<p><b>%s</b>%s</p>", logFormat.format(new Date()), message));
             }
         } catch (Exception e) {
             e.printStackTrace();
