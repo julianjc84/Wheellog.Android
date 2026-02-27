@@ -76,7 +76,7 @@ object Alarms: KoinComponent {
         isStarted = true
         timerTask = newTimerTask()
         alarmTimer = Timer().apply {
-            scheduleAtFixedRate(timerTask, 0, checkPeriod)
+            schedule(timerTask, 0, checkPeriod)
         }
     }
 

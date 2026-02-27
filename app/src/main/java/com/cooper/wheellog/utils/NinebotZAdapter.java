@@ -165,7 +165,7 @@ public class NinebotZAdapter extends BaseAdapter {
         };
         Timber.i("Ninebot Z timer started");
         keepAliveTimer = new Timer();
-        keepAliveTimer.scheduleAtFixedRate(timerTask, 200, 25);
+        keepAliveTimer.schedule(timerTask, 200, 25);
     }
 
     public void resetConnection() {

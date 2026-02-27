@@ -167,7 +167,7 @@ LocationListener locationListener = new LocationListener() {
             }
         };
         keepAliveTimer = new Timer();
-        keepAliveTimer.scheduleAtFixedRate(timerTask, 0, 200); //cada 500ms
+        keepAliveTimer.schedule(timerTask, 0, 200); //cada 500ms
     }
 
     public void removeConnection(GearSAPServiceProviderConnection connection) {
