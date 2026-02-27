@@ -21,6 +21,7 @@ import android.view.KeyEvent
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
+import androidx.core.view.isVisible
 import android.widget.Toast
 import androidx.activity.compose.setContent
 import androidx.activity.result.contract.ActivityResultContracts
@@ -1013,7 +1014,7 @@ class MainActivity : AppCompatActivity() {
         return when (keyCode) {
             KeyEvent.KEYCODE_BACK -> {
                 // If settings is visible, hide it.
-                if (binding.settingsView.visibility == View.VISIBLE) {
+                if (binding.settingsView.isVisible) {
                     if (settingsNavHostController != null) {
                         if (settingsNavHostController?.previousBackStackEntry == null) {
                             toggleSettings()

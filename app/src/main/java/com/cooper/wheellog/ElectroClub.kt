@@ -2,6 +2,7 @@ package com.cooper.wheellog
 
 import android.app.Activity
 import android.net.Uri
+import androidx.core.net.toUri
 import androidx.appcompat.app.AlertDialog
 import com.cooper.wheellog.data.TripDao
 import com.cooper.wheellog.data.TripDataDbEntry
@@ -238,7 +239,7 @@ class ElectroClub: KoinComponent {
     }
 
     fun getUrlFromTrackId(trackId: Int): Uri {
-        return Uri.parse("https:/electro.club/track/$trackId")
+        return "https://electro.club/track/$trackId".toUri()
     }
 
     fun getAndSelectGarageByMacOrShowChooseDialog(

@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import androidx.appcompat.app.AlertDialog
 import android.content.Context
 import android.graphics.*
+import androidx.core.graphics.createBitmap
 import android.os.Handler
 import android.util.AttributeSet
 import android.view.GestureDetector
@@ -515,7 +516,7 @@ class WheelView(context: Context, attrs: AttributeSet?) : View(context, attrs), 
         innerArcTextSize = calculateFontSize(boundaryOfText, batteryTextRect, "88%", textPaint)
         innerArcPaint.strokeWidth = innerStrokeWidth
         calcModelTextSize()
-        mTextBoxesBitmap = Bitmap.createBitmap(w, h, Bitmap.Config.ARGB_8888)
+        mTextBoxesBitmap = createBitmap(w, h, Bitmap.Config.ARGB_8888)
         mCanvas = Canvas(mTextBoxesBitmap!!)
         if (landscape && w.toFloat() / h > 1.4 || !landscape && h.toFloat() / w > 1.1) {
             redrawTextBoxes()
