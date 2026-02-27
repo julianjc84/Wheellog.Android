@@ -11,7 +11,7 @@ import android.location.LocationManager;
 import android.os.Binder;
 import android.os.Bundle;
 import android.os.IBinder;
-import android.util.Log;
+import timber.log.Timber;
 import android.widget.Toast;
 
 import androidx.core.content.ContextCompat;
@@ -55,7 +55,7 @@ public class GearService extends SAAgent {
     public GearService() {
         super(TAG, GearSAPServiceProviderConnection.class);
 //        android.os.Debug.waitForDebugger();  // this line is key for debugging (run and attach debugger)
-        Log.d(TAG, "Service instantiated");
+        Timber.d("Service instantiated");
     }
 
 LocationListener locationListener = new LocationListener() {
@@ -114,7 +114,7 @@ LocationListener locationListener = new LocationListener() {
     public void transmitMessage(String sendingString) {
         byte[] sendingMessage = sendingString.getBytes();
 
-        Log.i(TAG, sendingString);
+        Timber.i(sendingString);
 
         for (GearSAPServiceProviderConnection connection : mConnectionBag) {
             try {
@@ -235,19 +235,19 @@ LocationListener locationListener = new LocationListener() {
                 Toast.makeText(getBaseContext(), "GEAR CONNECTION ESTABLISHED", Toast.LENGTH_LONG).show();
                 reevaluateNeedToSend(); //We start sending when watch connects
             } else {
-                Log.e(TAG, "Connection object is null.");
+                Timber.e("Connection object is null.");
             }
         } else if (result == CONNECTION_ALREADY_EXIST) {
-            Log.e(TAG, "CONNECTION_ALREADY_EXISTS");
+            Timber.e("CONNECTION_ALREADY_EXISTS");
         } else {
-            Log.e(TAG, "connection error result" + result);
+            Timber.e("connection error result%d", result);
         }
     }
 
     @Override
     protected void onServiceConnectionRequested(SAPeerAgent agent) {
         acceptServiceConnectionRequest(agent);
-        Log.i(TAG, "Accepting connection"); //The watch initiates always the connection
+        Timber.i("Accepting connection"); //The watch initiates always the connection
     }
 
     @Override
@@ -261,10 +261,10 @@ LocationListener locationListener = new LocationListener() {
             accessory.initialize(this); //Y expect this to do nothing for non-Samsung devices
         }
         catch (SsdkUnsupportedException exc) {
-            Log.e(TAG, "Unsupported SDK");
+            Timber.e("Unsupported SDK");
         }
         catch(Exception exc) {
-            Log.e(TAG, "initialization failed");
+            Timber.e("initialization failed");
             exc.printStackTrace();
             stopSelf();
         }
@@ -275,7 +275,7 @@ LocationListener locationListener = new LocationListener() {
     public int onStartCommand(Intent intent, int flags, int startId) {
         super.onStartCommand(intent, flags, startId);
         Toast.makeText(getBaseContext(), "Gear Service started", Toast.LENGTH_LONG).show();
-        Log.i(TAG, "started");
+        Timber.i("started");
         final NotificationUtil notifications = KoinJavaComponent.get(NotificationUtil.class);
         startForeground(Constants.MAIN_NOTIFICATION_ID, notifications.getNotification());
         return START_STICKY;
@@ -283,7 +283,7 @@ LocationListener locationListener = new LocationListener() {
 
     @Override
     public IBinder onBind(Intent intent) {
-        Log.i(TAG, "onBind");
+        Timber.i("onBind");
         return mBinder;
     }
 

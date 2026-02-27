@@ -1,6 +1,6 @@
 package com.cooper.wheellog;
 
-import android.util.Log;
+import timber.log.Timber;
 
 import com.samsung.android.sdk.accessory.SASocket;
 
@@ -13,13 +13,13 @@ public class GearSAPServiceProviderConnection extends SASocket {
 
     public void setParent(GearService gearService) {
         mParent = gearService;
-        Log.d(TAG,"Set Parent");
+        Timber.d("Set Parent");
     }
 
     public GearSAPServiceProviderConnection() {
         super(GearSAPServiceProviderConnection.class.getName());
         connectionID = ++nextID;
-        Log.d(TAG,"GearSAPServiceProviderConnection");
+        Timber.d("GearSAPServiceProviderConnection");
     }
 
     @Override
@@ -27,16 +27,16 @@ public class GearSAPServiceProviderConnection extends SASocket {
         if(mParent!=null) {
             mParent.removeConnection(this);
         }
-        Log.d(TAG,"Set OnServiceConnectionLost");
+        Timber.d("Set OnServiceConnectionLost");
     }
 
     @Override
     public void onReceive(int channelID, byte[] data) {
-        Log.d(TAG,"OnReceive");
+        Timber.d("OnReceive");
     }
 
     @Override
     public void onError(int channelID, String errorString, int errorCode) {
-        Log.e(TAG,"ERROR:"+errorString+ " | " + errorCode);
+        Timber.e("ERROR:"+errorString+ " | " + errorCode);
     }
 }
