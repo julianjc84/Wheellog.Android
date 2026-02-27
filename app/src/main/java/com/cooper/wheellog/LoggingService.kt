@@ -181,7 +181,7 @@ class LoggingService : Service() {
     }
 
     private fun isNullOrEmpty(s: String?): Boolean {
-        return s == null || s.trim { it <= ' ' }.isEmpty()
+        return s == null || s.trim().isEmpty()
     }
 
     override fun onDestroy() {

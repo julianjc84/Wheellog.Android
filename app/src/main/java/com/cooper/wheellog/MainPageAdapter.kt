@@ -181,7 +181,7 @@ class MainPageAdapter(private var pages: MutableList<Int>, val activity: MainAct
                     invalidate()
 
                     var profileName = appConfig.profileName
-                    if (profileName.trim { it <= ' ' } == "") {
+                    if (profileName.trim() == "") {
                         profileName = if (data.model == "") data.name else data.model
                     }
                     setWheelModel(profileName)

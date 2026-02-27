@@ -299,7 +299,7 @@ fun sliderPref(
                         modifier = Modifier.weight(1f)
                     )
                     val maxCardWidth =
-                        if ((String.format(format, max * visualMultiple)).length < 4) {
+                        if ((String.format(Locale.ROOT, format, max * visualMultiple)).length < 4) {
                             60.dp
                         } else {
                             100.dp
@@ -315,7 +315,7 @@ fun sliderPref(
                             },
                     ) {
                         Text(
-                            text = String.format(format, sliderPosition),
+                            text = String.format(Locale.ROOT, format, sliderPosition),
                             maxLines = 1,
                             modifier = Modifier.padding(6.dp).fillMaxWidth(),
                             style = MaterialTheme.typography.bodyLarge.copy(
