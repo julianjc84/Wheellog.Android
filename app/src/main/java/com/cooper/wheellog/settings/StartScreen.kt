@@ -221,11 +221,12 @@ fun startScreen(
                                 showDonateDialog = true
                             }
                         }
+                        val resources = context.resources
                         clickablePref(
                             name = stringResource(R.string.telegram),
                             showDiv = false,
                         ) {
-                            val url = if (LocaleManager.getLocale(context.resources).language == "ru")
+                            val url = if (LocaleManager.getLocale(resources).language == "ru")
                                 "https://t.me/wheelLog"
                             else
                                 "https://t.me/WheelLog_eng"
