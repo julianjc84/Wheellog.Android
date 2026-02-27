@@ -36,7 +36,7 @@
         tools:ignore="AlwaysShowAction" />
     <item
         android:id="@+id/miBand"
-        android:icon="@drawable/ajdm_ic_mi_med"
+        android:icon="@drawable/ic_mi_med"
         android:title="@string/miband_desc"
         android:visible="false"
         app:showAsAction="always"

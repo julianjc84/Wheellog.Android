@@ -859,7 +859,6 @@ class MainActivity : AppCompatActivity() {
                 // ignored
             }
         }
-        ThemeManager.changeAppIcon(this@MainActivity)
         object : CountDownTimer((2 * 60 * 1000 /* 2 min */).toLong(), 1000) {
             override fun onTick(millisUntilFinished: Long) {
                 if (!LoggingService.isInstanceCreated()) {
@@ -906,12 +905,6 @@ class MainActivity : AppCompatActivity() {
             miLogging = findItem(R.id.miLogging)
         }
 
-        // Themes
-        if (appConfig.appTheme == R.style.AJDMTheme) {
-            val miSettings = mMenu!!.findItem(R.id.miSettings)
-            miSettings.setIcon(ThemeManager.getId(ThemeIconEnum.MenuSettings))
-            miSearch!!.setIcon(ThemeManager.getId(ThemeIconEnum.MenuBluetooth))
-        }
         return true
     }
 
