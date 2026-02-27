@@ -541,7 +541,7 @@
     <string name="taillight_settings_title">Задний свет</string>
     <string name="drl_settings_description_nb">Включить ангельский глаз</string>
     <string name="taillight_settings_description">Вкл/выкл задний свет</string>
-    <string name="alarm_text_battery_v">[ЗАРЯД][...]</string>
+    <string name="alarm_text_battery_v">[ЗАРЯД] \n  - %1$d</string>
     <string name="wearos_pages_title">Страницы WearOS</string>
     <string name="wearos_pages_description">Выбрать страницы для WearOS</string>
     <string name="pwm_tiltback_alarm">FW mod - подъем по PWM</string>
