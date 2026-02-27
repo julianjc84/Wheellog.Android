@@ -44,12 +44,8 @@ object SomeUtil: KoinComponent {
     }
 
     @SuppressLint("UseCompatLoadingForDrawables")
-    @Suppress("DEPRECATION")
     fun Fragment.getDrawableEx(@DrawableRes id: Int): Drawable? {
-        return if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP)
-            resources.getDrawable(id)
-        else
-            requireContext().getDrawable(id)
+        return requireContext().getDrawable(id)
     }
 
     @JvmStatic
