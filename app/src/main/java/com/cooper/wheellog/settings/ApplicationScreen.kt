@@ -300,8 +300,8 @@ fun applicationScreen(
                 }
             }
 
-            var colorPwmStart by remember { mutableStateOf(appConfig.colorPwmStart.toFloat()) }
-            var colorPwmEnd by remember { mutableStateOf(appConfig.colorPwmEnd.toFloat()) }
+            var colorPwmStart by remember { mutableFloatStateOf(appConfig.colorPwmStart.toFloat()) }
+            var colorPwmEnd by remember { mutableFloatStateOf(appConfig.colorPwmEnd.toFloat()) }
             AnimatedVisibility(visible = (shortPwm || pwmDial)) {
                 sliderPref(
                     name = stringResource(R.string.color_pwm_start_title),

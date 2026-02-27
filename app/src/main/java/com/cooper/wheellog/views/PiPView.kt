@@ -44,7 +44,7 @@ class PiPView {
 
         val colorMain = colorResource(R.color.wheelview_main_positive_dial)
         val colorDim = colorResource(R.color.wheelview_arc_dim)
-        val arcPercent = MathsUtil.clamp(model.value.value / model.maxValue.value, 0f, 1f)
+        val arcPercent = MathsUtil.clamp(model.value.floatValue / model.maxValue.floatValue, 0f, 1f)
 
         val animatedPercent by animateFloatAsState(
             targetValue = arcPercent,
@@ -54,7 +54,7 @@ class PiPView {
             )
         )
         val animatedValue by animateFloatAsState(
-            targetValue = model.value.value,
+            targetValue = model.value.floatValue,
             animationSpec = spring(
                 dampingRatio = Spring.DampingRatioNoBouncy,
                 stiffness = Spring.StiffnessMedium
