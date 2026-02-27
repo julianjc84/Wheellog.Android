@@ -36,31 +36,6 @@
                 android:layout_marginBottom="15dp"
                 android:textSize="14sp" />
 
-            <CheckBox
-                android:id="@+id/agree_with_policy"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="15dp"
-                android:minHeight="48dp"
-                android:text="@string/private_policy_agree" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="15dp"
-                android:text="@string/send_yandex_metriсa_description"
-                android:textSize="14sp" />
-
-            <CheckBox
-                android:id="@+id/agree_with_metrica"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="15dp"
-                android:checked="false"
-                android:minHeight="48dp"
-                android:text="@string/send_yandex_metriсa_title"
-                android:visibility="gone" />
-
             <Button
                 android:id="@+id/ok_button"
                 android:layout_width="match_parent"
@@ -69,18 +44,7 @@
                 android:ellipsize="none"
                 android:text="@android:string/ok"
                 android:theme="@style/OriginalTheme.ButtonStylePositive"
-                android:visibility="gone"
                 app:layout_constraintStart_toStartOf="parent" />
-
-            <Button
-                android:id="@+id/btn_cancel"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="15dp"
-                android:ellipsize="none"
-                android:text="@android:string/no"
-                app:layout_constraintStart_toStartOf="parent"
-                tools:ignore="ButtonCase" />
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

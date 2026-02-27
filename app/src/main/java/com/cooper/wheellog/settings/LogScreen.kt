@@ -205,7 +205,7 @@ fun logScreen(appConfig: AppConfig = koinInject())
                         appConfig.ecGarage = null
                         ElectroClub.instance.getAndSelectGarageByMacOrShowChooseDialog(
                             mac = "",
-                            activity = currentActivity,
+                            activity = activity,
                         ) { }
                     }
                 }

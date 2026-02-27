@@ -186,4 +186,6 @@
     <string name="phase_current">Courant de phase</string>
     <string name="maxtemperature">Temp. max.</string>
     <string name="pwm">PWM</string>
+    <string name="private_policy_title">Politique de confidentialité</string>
+    <string name="private_policy"><![CDATA[WheelLog ne collecte, ne stocke et ne transmet aucune donnée personnelle ni statistique d\'utilisation. Pour plus de détails, consultez notre <a href=\"https://github.com/Wheellog/Wheellog.Android/wiki/Privacy-Policy\">Politique de confidentialité</a> et les <a href=\"https://github.com/Wheellog/Wheellog.Android/wiki/Terms-&-Conditions\">Conditions générales</a>.]]></string>
 </resources>

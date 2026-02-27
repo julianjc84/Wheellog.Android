@@ -186,4 +186,6 @@
     <string name="phase_current">Fázový proud</string>
     <string name="maxtemperature">Max. teplota</string>
     <string name="pwm">PWM</string>
+    <string name="private_policy_title">Zásady ochrany osobních údajů</string>
+    <string name="private_policy"><![CDATA[WheelLog neshromažďuje, neukládá ani neodesílá žádné osobní údaje ani statistiky používání. Další podrobnosti naleznete v našich <a href=\"https://github.com/Wheellog/Wheellog.Android/wiki/Privacy-Policy\">Zásadách ochrany osobních údajů</a> a <a href=\"https://github.com/Wheellog/Wheellog.Android/wiki/Terms-&-Conditions\">Podmínkách používání</a>.]]></string>
 </resources>

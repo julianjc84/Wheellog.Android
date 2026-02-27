@@ -63,7 +63,6 @@ import com.welie.blessed.ConnectionState
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
-// import com.yandex.metrica.YandexMetrica
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import org.koin.android.ext.android.inject
@@ -877,7 +876,7 @@ class MainActivity : AppCompatActivity() {
                 } catch (_: Exception) {
                     // ignore
                 }
-                // Kill YandexMetrika process.
+                // Kill background processes.
                 val am = getSystemService(ACTIVITY_SERVICE) as ActivityManager
                 val runningProcesses = am.runningAppProcesses
                 for (process in runningProcesses) {
@@ -1138,7 +1137,6 @@ class MainActivity : AppCompatActivity() {
         ) {
             val bluetoothServiceIntent = Intent(applicationContext, BluetoothService::class.java)
             bindService(bluetoothServiceIntent, mBLEServiceConnection, BIND_AUTO_CREATE)
-//            YandexMetrica.reportEvent("BluetoothService is starting.")
         } else if (isMaxBleReq) {
             showSnackBar(R.string.bluetooth_required)
         }

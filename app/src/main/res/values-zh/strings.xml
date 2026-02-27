@@ -182,4 +182,7 @@
     <string name="phase_current">相电流</string>
     <string name="maxtemperature">最高温度</string>
     <string name="pwm">PWM</string>
+
+    <string name="private_policy_title">隐私政策</string>
+    <string name="private_policy"><![CDATA[WheelLog 不会收集、存储或上传任何个人数据或使用统计信息。如需了解更多详情，请参阅我们的<a href=\"https://github.com/Wheellog/Wheellog.Android/wiki/Privacy-Policy\">隐私政策</a>和<a href=\"https://github.com/Wheellog/Wheellog.Android/wiki/Terms-&-Conditions\">条款与条件</a>。]]></string>
 </resources>

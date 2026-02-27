@@ -522,7 +522,6 @@
     <string name="wheel_calibration_message_nb">Please set wheel in center position before start, EUC will be locked, continue?</string>
     <string name="ec_choose_transport">[ec] Choose an transport</string>
     <string name="private_policy_title">Private policy</string>
-    <string name="private_policy_agree">I read and agree</string>
     <string name="current_mac">MAC address</string>
     <string name="log_location_pop_up">This app collects location data to enable GPS data in CSV logs when WheelLog is running in the background or when the screen is off. GPS data is not collected when EUC is disconnected.</string>
     <string name="share">Share</string>
@@ -600,7 +599,7 @@
     <string name="use_reconnect_title">Use reconnect</string>
     <string name="use_reconnect_description">Autoreconnect to wheel if data freeze (use only if you have problems)</string>
     <string name="use_raw_description">When enabled, all raw Bluetooth data packets from the wheel are logged to a separate CSV file. Logging begins when connected and first packet is received. The log file remains open while this setting is enabled, automatically continuing to log data across any disconnections and reconnections. Toggle this setting off to close the current log file. Files are saved to Downloads/WheelLog/[MAC_ADDRESS]/RAW_yyyy_MM_dd_HH_mm_ss.csv</string>
-    <string name="private_policy"><![CDATA[Before using the app, you must accept the <a href=\"https://github.com/Wheellog/Wheellog.Android/wiki/Privacy-Policy\">Private policy</a> and <a href=\"https://github.com/Wheellog/Wheellog.Android/wiki/Terms-&-Conditions\">Terms & Conditions</a>]]></string>
+    <string name="private_policy"><![CDATA[WheelLog does not collect, store, or upload any personal data or usage statistics. For more details, see our <a href=\"https://github.com/Wheellog/Wheellog.Android/wiki/Privacy-Policy\">Privacy Policy</a> and <a href=\"https://github.com/Wheellog/Wheellog.Android/wiki/Terms-&-Conditions\">Terms &amp; Conditions</a>.]]></string>
     <string name="replace_info_block">Replace \"%s\" to:</string>
     <string name="auto_log_when_moving_description">Start auto logging only when wheel speed more than</string>
     <string name="auto_log_when_moving_title">Start logging when is moving</string>
@@ -626,8 +625,6 @@
     <string name="setup_pwm_setup_max_speed_and_voltage">1. Manual setup max speed and voltage:</string>
     <string name="setup_pwm_auto">2. Auto. You need to spin wheel on air.</string>
     <string name="setup_pwm_select_from_template">3. Select from template:</string>
-    <string name="send_yandex_metriсa_title">Send usage statistics</string>
-    <string name="send_yandex_metriсa_description">This application uses the AppMetrica analytics service provided by Yandex. Geolocation is not sent. The information collected in this way will be used to resolve errors and cannot identify you.</string>
     <string name="map_map_tab_name">Map</string>
     <string name="map_statistics_tab_name">Stats</string>
     <string name="error_inputstream_null">Failed to create inputStream.</string>

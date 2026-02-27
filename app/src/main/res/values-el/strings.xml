@@ -186,4 +186,6 @@
     <string name="phase_current">Φασικό ρεύμα</string>
     <string name="maxtemperature">Μέγ. θερμ.</string>
     <string name="pwm">PWM</string>
+    <string name="private_policy_title">Πολιτική απορρήτου</string>
+    <string name="private_policy"><![CDATA[Το WheelLog δεν συλλέγει, αποθηκεύει ή μεταφορτώνει προσωπικά δεδομένα ή στατιστικά χρήσης. Για περισσότερες λεπτομέρειες, ανατρέξτε στην <a href=\"https://github.com/Wheellog/Wheellog.Android/wiki/Privacy-Policy\">Πολιτική απορρήτου</a> και τους <a href=\"https://github.com/Wheellog/Wheellog.Android/wiki/Terms-&-Conditions\">Όρους και προϋποθέσεις</a>.]]></string>
 </resources>

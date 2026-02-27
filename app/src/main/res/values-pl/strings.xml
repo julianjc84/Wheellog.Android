@@ -186,4 +186,6 @@
     <string name="phase_current">Prąd fazowy</string>
     <string name="maxtemperature">Maks. temp.</string>
     <string name="pwm">PWM</string>
+    <string name="private_policy_title">Polityka prywatności</string>
+    <string name="private_policy"><![CDATA[WheelLog nie zbiera, nie przechowuje ani nie przesyła żadnych danych osobowych ani statystyk użytkowania. Więcej informacji znajdziesz w naszej <a href=\"https://github.com/Wheellog/Wheellog.Android/wiki/Privacy-Policy\">Polityce prywatności</a> oraz <a href=\"https://github.com/Wheellog/Wheellog.Android/wiki/Terms-&-Conditions\">Warunkach korzystania</a>.]]></string>
 </resources>

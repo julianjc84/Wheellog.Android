@@ -487,17 +487,9 @@ fun applicationScreen(
             switchPref(
                 name = stringResource(R.string.use_detect_battery_optimization_title),
                 default = appConfig.detectBatteryOptimization,
-            ) {
-                appConfig.detectBatteryOptimization = it
-            }
-
-            switchPref(
-                name = stringResource(R.string.send_yandex_metriсa_title),
-                desc = stringResource(R.string.send_yandex_metriсa_description),
-                default = appConfig.yandexMetricaAccepted,
                 showDiv = false,
             ) {
-                appConfig.yandexMetricaAccepted = it
+                appConfig.detectBatteryOptimization = it
             }
         }
     }
