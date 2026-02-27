@@ -7,7 +7,6 @@ import android.app.NotificationManager
 import android.app.PendingIntent
 import android.content.Context
 import android.content.Intent
-import android.graphics.Color
 import android.os.Build
 import android.view.View
 import android.widget.RemoteViews
@@ -88,11 +87,7 @@ class NotificationUtil(private val context: Context): KoinComponent {
             if (appConfig.mibandMode == MiBandEnum.Alarm) {
                 notificationView.setTextViewText(R.id.text_message, context.getString(R.string.alarmmiband))
             } else {
-                val template = when (appConfig.appTheme) {
-                    R.style.AJDMTheme -> R.string.notification_text_ajdm_theme
-                    else -> R.string.notification_text
-                }
-                notificationView.setTextViewText(R.id.text_message, context.getString(template, speed, batteryLevel, temperature, distance))
+                notificationView.setTextViewText(R.id.text_message, context.getString(R.string.notification_text, speed, batteryLevel, temperature, distance))
                 notificationView.setTextViewText(R.id.text_title, "$title - $titleRide")
             }
         } else {
@@ -106,15 +101,6 @@ class NotificationUtil(private val context: Context): KoinComponent {
                     MiBandEnum.Medium -> ThemeManager.getId(ThemeIconEnum.MenuMiBandMed)
                     MiBandEnum.Max -> ThemeManager.getId(ThemeIconEnum.MenuMiBandMax)
                 })
-        // Themes
-        if (appConfig.appTheme == R.style.AJDMTheme) {
-            notificationView.setImageViewResource(R.id.icon, R.drawable.ajdm_notification_icon)
-            notificationView.setInt(R.id.status_bar_latest_event_content, "setBackgroundResource", R.color.ajdm_background)
-            val textColor = Color.BLACK
-            notificationView.setTextColor(R.id.text_title, textColor)
-            notificationView.setTextColor(R.id.text_message, textColor)
-            notificationView.setTextColor(R.id.ib_actions_text, textColor)
-        }
         notificationView.setImageViewResource(R.id.ib_connection,
                 when (connectionState) {
                     ConnectionState.CONNECTING -> ThemeManager.getId(ThemeIconEnum.NotificationConnecting)

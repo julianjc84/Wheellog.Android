@@ -482,20 +482,7 @@ class WheelView(context: Context, attrs: AttributeSet?) : View(context, attrs), 
 
         val imDiameter = oaDiameter - outerStrokeWidth - middleStrokeWidth - outerMediumPadding * 2
         var iaDiameter = 0f
-        when (currentTheme) {
-            R.style.OriginalTheme -> {
-                iaDiameter = oaDiameter - outerStrokeWidth - innerStrokeWidth - innerOuterPadding * 2
-            }
-            R.style.AJDMTheme -> {
-                val imRadius = imDiameter / 2
-                val midLeft: Float = centerX - imRadius
-                val midTop: Float = centerY - imRadius
-                val midRight: Float = centerX + imRadius
-                val midBottom: Float = centerY + imRadius
-                iaDiameter = imDiameter - middleStrokeWidth - innerStrokeWidth - mediumInnerPadding * 2
-                middleArcRect.set(midLeft, midTop, midRight, midBottom)
-            }
-        }
+        iaDiameter = oaDiameter - outerStrokeWidth - innerStrokeWidth - innerOuterPadding * 2
 
         val iaRadius = iaDiameter / 2
         val left = centerX - iaRadius
@@ -823,188 +810,6 @@ class WheelView(context: Context, attrs: AttributeSet?) : View(context, attrs), 
         drawTextBlocksBitmap(canvas)
     }
 
-    private fun drawAJDM(canvas: Canvas) {
-        var currentDial: Int
-        var currentDial2: Int
-        var pwmOnDial = false
-        if (appConfig.valueOnDial == "2") {
-            currentPwm = updateCurrentValue(targetPwm, currentPwm)
-            currentCurrent = updateCurrentValue2(targetCurrent, currentCurrent)
-            currentDial = currentPwm
-            currentDial2 = currentCurrent
-            pwmOnDial = true
-        }
-        else if (appConfig.valueOnDial == "1") {
-            currentSpeed = updateCurrentValue(targetSpeed, currentSpeed)
-            currentCurrent = updateCurrentValue2(targetCurrent, currentCurrent)
-            currentDial = currentCurrent
-            currentDial2 = currentSpeed
-        } else if (appConfig.valueOnDial == "3") {
-            currentSpeed = updateCurrentValue(targetSpeed, currentSpeed)
-            currentPhaseCurrent = updateCurrentValue2(targetPhaseCurrent, currentPhaseCurrent)
-            currentDial = currentPhaseCurrent
-            currentDial2 = currentSpeed
-        } else {
-            currentSpeed = updateCurrentValue(targetSpeed, currentSpeed)
-            currentCurrent = updateCurrentValue2(targetCurrent, currentCurrent)
-            currentDial = currentSpeed
-            currentDial2 = currentCurrent
-        }
-        currentTemperature = updateCurrentValue(targetTemperature, currentTemperature)
-        currentBattery = updateCurrentValue(targetBattery, currentBattery)
-        val pwmColor = getPwmColor(WheelData.getInstance().calculatedPwm.toInt())
-
-        //####################################################
-        //################# DRAW OUTER ARC ###################
-        //####################################################
-        outerArcPaint.color = getColorEx(R.color.ajdm_wheelview_arc_dim)
-        canvas.drawArc(outerArcRect, 144f, 252f, false, outerArcPaint)
-        if (pwmOnDial) {
-            outerArcPaint.color = pwmColor
-        } else {
-            if (currentDial >= 0) {
-                outerArcPaint.color = getColorEx(R.color.ajdm_wheelview_main_positive_dial)
-            } else {
-                outerArcPaint.color = getColorEx(R.color.ajdm_wheelview_main_negative_dial)
-            }
-        }
-        currentDial = abs(currentDial)
-
-        if (currentDial < 113) {
-            canvas.drawArc(outerArcRect, 144f, currentDial * 2.25f, false, outerArcPaint)
-        }
-        if (currentDial > 112) {
-            canvas.drawArc(outerArcRect, 144f, 112 * 2.25f, false, outerArcPaint)
-        }
-
-        //####################################################
-        //################# DRAW MIDDLE ARC ##################
-        //####################################################
-        middleArcPaint.color = getColorEx(R.color.ajdm_wheelview_arc_dim)
-        canvas.drawArc(middleArcRect, 144f, 252f, false, middleArcPaint)
-
-        if (currentDial2 >= 0) {
-            middleArcPaint.color = getColorEx(R.color.ajdm_wheelview_max_speed_dial)
-        } else {
-            middleArcPaint.color = getColorEx(R.color.ajdm_wheelview_avg_speed_dial)
-        }
-        currentDial2 = abs(currentDial2)
-        if (currentDial2 < 113) {
-            canvas.drawArc(middleArcRect, 144f, currentDial2 * 2.25f, false, middleArcPaint)
-        }
-        if (currentDial2 > 112) {
-            canvas.drawArc(middleArcRect, 144f, 112 * 2.25f, false, middleArcPaint)
-        }
-        //####################################################
-        //################# DRAW INNER ARC ###################
-        //####################################################
-        innerArcPaint.color = getColorEx(R.color.ajdm_wheelview_arc_dim)
-        canvas.drawArc(innerArcRect, 144f, 90f, false, innerArcPaint)
-        canvas.drawArc(innerArcRect, 306f, 90f, false, innerArcPaint)
-
-        innerArcPaint.color = getColorEx(R.color.ajdm_wheelview_battery_dial)
-        canvas.drawArc(innerArcRect, 144f, currentBattery * 2.25f, false, innerArcPaint)
-        innerArcPaint.color = getColorEx(R.color.ajdm_wheelview_battery_low_dial)
-        canvas.drawArc(innerArcRect, 144f, targetBatteryLowest * 2.25f, false, innerArcPaint)
-
-        val value = (currentTemperature - 112) * 2.25f * 100 / 80
-
-        if (mTemperature > 0) {
-            innerArcPaint.color = getColorEx(R.color.ajdm_wheelview_temperature_dial)
-            canvas.drawArc(innerArcRect, 306 - value, 90 + value, false, innerArcPaint)
-        } else {
-            innerArcPaint.color = getColorEx(R.color.ajdm_wheelview_arc_dim)
-            canvas.drawArc(innerArcRect, 306f, 90f, false, innerArcPaint)
-        }
-
-        //####################################################
-        //################# DRAW VOLT ARC TEST ###############
-        //####################################################
-        voltArcPaint.color = getColorEx(R.color.ajdm_wheelview_arc_dim)
-        canvas.drawArc(voltArcRect, 144f, 252f, false, voltArcPaint)
-
-        if (currentDial2 >= 0) {
-            voltArcPaint.color = getColorEx(R.color.ajdm_wheelview_max_speed_dial)
-        } else {
-            voltArcPaint.color = getColorEx(R.color.ajdm_wheelview_avg_speed_dial)
-        }
-        currentDial2 = abs(currentDial2)
-        if (currentDial2 < 113) {
-            canvas.drawArc(voltArcRect, 144f, currentDial2 * 2.25f, false, voltArcPaint)
-        }
-        if (currentDial2 > 112) {
-            canvas.drawArc(voltArcRect, 144f, 112 * 2.25f, false, voltArcPaint)
-        }
-
-        //####################################################
-        //################# DRAW SPEED TEXT ##################
-        //####################################################
-        val speed = if (appConfig.useMph) kmToMiles(mSpeed.toFloat()).roundToInt() else mSpeed
-        val speedString: String = if (speed < 100) String.format(Locale.US, "%.1f", speed / 10.0) else String.format(Locale.US, "%02d", (speed / 10.0).roundToInt())
-        val alarm1Speed = appConfig.alarm1Speed.toDouble()
-        if (appConfig.swapSpeedPwm) textPaint.color = pwmColor
-        else if (!appConfig.pwmBasedAlarms && alarm1Speed * 10 > 0 && mSpeed >= alarm1Speed * 10)
-            textPaint.color = getColorEx(R.color.ajdm_accent)
-        else
-            textPaint.color = getColorEx(R.color.ajdm_wheelview_speed_text)
-        textPaint.textSize = speedTextSize
-        val mainText: String = if (appConfig.swapSpeedPwm) WheelData.getInstance().calculatedPwm.roundToInt().toString() else speedString
-        canvas.drawText(mainText, outerArcRect.centerX(), speedTextRect.centerY() + speedTextRect.height() / 2, textPaint)
-        textPaint.textSize = speedTextKPHSize
-        val metric = if (appConfig.useMph) resources.getString(R.string.mph) else resources.getString(R.string.kmh)
-
-        if (appConfig.useShortPwm || isInEditMode) {
-            textPaint.textSize = speedTextKPHSize * 1.2f
-            if (!appConfig.swapSpeedPwm) {
-                val pwm = String.format("%02.0f%% / %02.0f%%", WheelData.getInstance().calculatedPwm, WheelData.getInstance().maxPwm)
-                textPaint.color = pwmColor
-                canvas.drawText(pwm, outerArcRect.centerX(), speedTextRect.bottom + speedTextKPHHeight * 3.3f, textPaint)
-                textPaint.color = getColorEx(R.color.ajdm_wheelview_text)
-            } else {
-                val spd = speedString + metric
-                textPaint.color = getColorEx(R.color.ajdm_wheelview_text)
-                canvas.drawText(spd, outerArcRect.centerX(), speedTextRect.bottom + speedTextKPHHeight * 3.3f, textPaint)
-            }
-        } else {
-            textPaint.color = getColorEx(R.color.ajdm_wheelview_text)
-            canvas.drawText(metric, outerArcRect.centerX(), speedTextRect.bottom + speedTextKPHHeight * 1.1f, textPaint)
-        }
-
-        //####################################################
-        //######## DRAW BATTERY AND TEMPERATURE TEXT #########
-        //####################################################
-        if (mTemperature > 0 && mBattery > -1) {
-            textPaint.textSize = innerArcTextSize
-            canvas.save()
-            if (width > height) canvas.rotate(140 + -3.3f * 2.25f - 180, innerArcRect.centerX(), innerArcRect.centerY()) else canvas.rotate(140 + -2 * 2.25f - 180, innerArcRect.centerY(), innerArcRect.centerX())
-            val bestbatteryString = java.lang.String.format(Locale.US, "%02d%%", mBattery)
-            canvas.drawText(bestbatteryString, batteryTextRect.centerX(), batteryTextRect.centerY(), textPaint)
-            canvas.restore()
-            canvas.save()
-            /// true battery
-            val customPercents = appConfig.customPercents
-            if (appConfig.useBetterPercents || customPercents) {
-                if (width > height) canvas.rotate(147 + currentBattery * 2.25f - 180, innerArcRect.centerX(), innerArcRect.centerY()) else canvas.rotate(146 + currentBattery * 2.25f - 180, innerArcRect.centerY(), innerArcRect.centerX())
-                var batteryCalculateType = "true"
-                if (customPercents && !WheelData.getInstance().isVoltageTiltbackUnsupported) batteryCalculateType = "custom"
-                val batteryString = java.lang.String.format(Locale.US, "%s", batteryCalculateType)
-                canvas.drawText(batteryString, batteryTextRect.centerX(), batteryTextRect.centerY(), textPaint)
-                canvas.restore()
-                canvas.save()
-            }
-            if (width > height) canvas.rotate(138f + 120 * 2.25f, innerArcRect.centerX(), innerArcRect.centerY()) else canvas.rotate(135f + 120 * 2.25f, innerArcRect.centerY(), innerArcRect.centerX())
-            canvas.drawText(mTemperature.toTempString(), temperatureTextRect.centerX(), temperatureTextRect.centerY(), textPaint)
-            canvas.restore()
-            canvas.save()
-        }
-
-        // Wheel name
-        canvas.drawTextOnPath(mWheelModel, modelTextPath!!, 0f, 0f, modelTextPaint)
-
-        // Draw text blocks bitmap
-        drawTextBlocksBitmap(canvas)
-    }
-
     private fun drawTextBlocksBitmap(canvas: Canvas) {
         canvas.drawBitmap(mTextBoxesBitmap!!, 0f, 0f, textPaint)
         refreshDisplay = currentSpeed != targetSpeed || currentCurrent != targetCurrent || currentPhaseCurrent != targetPhaseCurrent || currentBattery != targetBattery || currentTemperature != targetTemperature
@@ -1018,10 +823,7 @@ class WheelView(context: Context, attrs: AttributeSet?) : View(context, attrs), 
 
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
-        when (currentTheme) {
-            R.style.OriginalTheme -> drawOriginal(canvas)
-            R.style.AJDMTheme -> drawAJDM(canvas)
-        }
+        drawOriginal(canvas)
     }
 
     private fun updateCurrentValue(target: Int, current: Int): Int {
@@ -1073,45 +875,6 @@ class WheelView(context: Context, attrs: AttributeSet?) : View(context, attrs), 
                 innerArcPaint.isAntiAlias = true
                 innerArcPaint.strokeWidth = innerStrokeWidth
                 innerArcPaint.style = Paint.Style.STROKE
-                textPaint = Paint(Paint.ANTI_ALIAS_FLAG)
-                textPaint.textAlign = Paint.Align.CENTER
-                textPaint.typeface = tfTest
-                modelTextPaint = Paint(textPaint)
-                modelTextPaint.color = getColorEx(R.color.wheelview_text)
-                versionPaint = Paint(Paint.ANTI_ALIAS_FLAG)
-                versionPaint.textAlign = Paint.Align.RIGHT
-                versionPaint.color = getColorEx(R.color.wheelview_versiontext)
-                versionPaint.typeface = tfTest
-            }
-            R.style.AJDMTheme -> {
-                outerStrokeWidth = dpToPx(context, 30).toFloat()
-                innerStrokeWidth = dpToPx(context, 25).toFloat()
-                middleStrokeWidth = dpToPx(context, 10).toFloat()
-                voltStrokeWidth = dpToPx(context, 5).toFloat()
-                innerOuterPadding = dpToPx(context, 5).toFloat()
-                innerTextPadding = 0f
-                mediumInnerPadding = dpToPx(context, 5).toFloat()
-                outerMediumPadding = dpToPx(context, 5).toFloat()
-                boxMiddlePadding = dpToPx(context, 10).toFloat()
-                boxTopPadding = dpToPx(context, 10).toFloat()
-                boxOuterPadding = dpToPx(context, 10).toFloat()
-                boxInnerPadding = dpToPx(context, 10).toFloat()
-                outerArcPaint = Paint(Paint.ANTI_ALIAS_FLAG)
-                outerArcPaint.isAntiAlias = true
-                outerArcPaint.strokeWidth = outerStrokeWidth
-                outerArcPaint.style = Paint.Style.STROKE
-                innerArcPaint = Paint(Paint.ANTI_ALIAS_FLAG)
-                innerArcPaint.isAntiAlias = true
-                innerArcPaint.strokeWidth = innerStrokeWidth
-                innerArcPaint.style = Paint.Style.STROKE
-                middleArcPaint = Paint(Paint.ANTI_ALIAS_FLAG)
-                middleArcPaint.isAntiAlias = true
-                middleArcPaint.strokeWidth = middleStrokeWidth
-                middleArcPaint.style = Paint.Style.STROKE
-                voltArcPaint = Paint(Paint.ANTI_ALIAS_FLAG)
-                voltArcPaint.isAntiAlias = true
-                voltArcPaint.strokeWidth = voltStrokeWidth
-                voltArcPaint.style = Paint.Style.STROKE
                 textPaint = Paint(Paint.ANTI_ALIAS_FLAG)
                 textPaint.textAlign = Paint.Align.CENTER
                 textPaint.typeface = tfTest

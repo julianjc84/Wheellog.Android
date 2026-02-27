@@ -11,7 +11,6 @@ import androidx.compose.ui.res.stringResource
 import com.cooper.wheellog.AppConfig
 import com.cooper.wheellog.R
 import com.cooper.wheellog.utils.NotificationUtil
-import com.cooper.wheellog.utils.ThemeEnum
 import com.cooper.wheellog.utils.ThemeIconEnum
 import org.koin.compose.koinInject
 
@@ -46,16 +45,6 @@ fun applicationScreen(
             ) {
                 restartRequiredAlert = true
                 appConfig.useEng = it
-            }
-
-            list(
-                name = stringResource(R.string.app_theme_title),
-                desc = stringResource(R.string.app_theme_description),
-                entries = ThemeEnum.values().associate { it.value.toString() to it.name },
-                defaultKey = appConfig.appThemeInt.toString()
-            ) {
-                restartRequiredAlert = true
-                appConfig.appThemeInt = it.first.toInt()
             }
 
             list(
@@ -228,7 +217,7 @@ fun applicationScreen(
                 ),
                 keyIcons = mapOf(
                     "watch" to R.drawable.ic_action_watch_white,
-                    "miband" to R.drawable.ajdm_ic_mi_med,
+                    "miband" to R.drawable.ic_mi_med,
                     "reset" to R.drawable.ic_action_reset,
                 ),
                 defaultKeys = appConfig.mainMenuButtons.toList()

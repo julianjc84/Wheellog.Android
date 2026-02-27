@@ -7,7 +7,6 @@ import androidx.appcompat.app.AppCompatDelegate.MODE_NIGHT_UNSPECIFIED
 import androidx.preference.PreferenceManager
 import com.cooper.wheellog.utils.MiBandEnum
 import com.cooper.wheellog.utils.NotificationUtil
-import com.cooper.wheellog.utils.ThemeEnum
 import com.cooper.wheellog.utils.VolumeKeyController
 import com.wheellog.shared.Constants
 import com.wheellog.shared.WearPage
@@ -41,18 +40,8 @@ class AppConfig(var context: Context): KoinComponent {
         get() = getValue(R.string.use_eng, false)
         set(value) = setValue(R.string.use_eng, value)
 
-    var appThemeInt: Int
-        get() = getValue(R.string.app_theme, ThemeEnum.Original.value.toString()).toInt()
-        set(value) = setValue(R.string.app_theme, value.toString())
-
     val appTheme: Int
-        get() {
-            val stringVal = getValue(R.string.app_theme, ThemeEnum.Original.value.toString())
-            return when (ThemeEnum.fromInt(stringVal.toInt())) {
-                ThemeEnum.AJDM -> R.style.AJDMTheme
-                else -> R.style.OriginalTheme
-            }
-        }
+        get() = R.style.OriginalTheme
 
     var useComposeUI: Boolean = false
 
