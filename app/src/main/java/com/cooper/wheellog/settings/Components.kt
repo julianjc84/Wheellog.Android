@@ -1,6 +1,5 @@
 package com.cooper.wheellog.settings
 
-import android.app.Activity
 import android.media.Ringtone
 import android.media.RingtoneManager
 import android.net.Uri
@@ -24,6 +23,8 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.*
 import androidx.compose.ui.focus.*
 import androidx.compose.ui.graphics.*
+import androidx.activity.ComponentActivity
+import androidx.activity.compose.LocalActivity
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.*
 import androidx.compose.ui.semantics.Role
@@ -655,8 +656,9 @@ fun alarmsList(
     onSelect: (selected: Pair<String, Uri>) -> Unit = {},
 ) {
     val context = LocalContext.current
+    val activity = LocalActivity.current as ComponentActivity
     val manager by lazy {
-        RingtoneManager(context as Activity).apply {
+        RingtoneManager(activity).apply {
             setType(RingtoneManager.TYPE_ALARM)
         }
     }
