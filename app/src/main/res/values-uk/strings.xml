@@ -4,9 +4,6 @@
     <string name="alert2_title">Друге попередження</string>
     <string name="alert3_title">Третє попередження</string>
     <string name="max_speed_title">Підйом педалів</string>
-    <string name="scan">Пошук</string>
-    <string name="stop">Зупинити</string>
-    <string name="connect">Підключити</string>
     <string name="connecting">Підключення</string>
     <string name="top_speed">Макс. швидкість</string>
     <string name="battery">Батарея</string>
@@ -49,7 +46,6 @@
     <string name="horn_mode_description">Звук після натискання кнопки.</string>
     <string name="pedals_mode_title">Налаштування педалей</string>
     <string name="led_mode_title">Режим світлодіодів</string>
-    <string name="strobe_mode_title">Режим стробоскопу</string>
     <string name="light_mode_title">Режим фари</string>
     <string name="on_off">Увімк./Вимк.</string>
     <string name="on_off_auto">Увімк./Вимк./Авто</string>
@@ -58,7 +54,6 @@
     <string name="auto">Авто</string>
     <string name="strobe">Строб</string>
     <string name="disabled">Відключено</string>
-    <string name="enabled">Увімкнено</string>
     <string name="hard">Жоросткі</string>
     <string name="medium">Середні</string>
     <string name="soft">Плавні</string>
@@ -69,10 +64,7 @@
     <string name="alarm_settings_title">Налаштування сигналів</string>
     <string name="watch_settings_title">Налаштування годинника/браслета</string>
     <string name="wheel_settings_title">Налаштування колеса</string>
-    <string name="notification_text_not">%1$.0f км/г | %2$d %% | %3$.0f W | %4$d°C | %5$.3f км</string>
     <string name="reset_user_distance_title">Скинути мій пробіг</string>
-    <string name="no_smart_bms">Smart BMS не знайдена</string>
-    <string name="edit_mac_addr_title">Змінити MAC адресу</string>
     <string name="about_app_title">Про Wheellog</string>
     <string name="settings_title">Налаштування</string>
     <string name="amp">А</string>
@@ -94,7 +86,6 @@
     <string name="alarm_3_battery_title">Рівень розряду 3</string>
     <string name="alarm_2_battery_title">Рівень розряду 2</string>
     <string name="current_alarm_title">Попередження по силі струму</string>
-    <string name="current_title">Сила струму</string>
     <string name="alarm_current_description">Попередження про перевищення заданої сили струму.</string>
     <string name="temperature_alarm_title">Попредження про температуру</string>
     <string name="temperature_title">Температура</string>
@@ -104,8 +95,6 @@
     <string name="no_chart_data">Немає даних графіку</string>
     <string name="auto_log_title">Автоматичне логування</string>
     <string name="auto_log_description">Автоматично почати запис логу після підключення колеса</string>
-    <string name="auto_upload_log_title">Аплоад логів</string>
-    <string name="auto_upload_log_description">Автоматично аплоадити логи у Google Drive.</string>
     <string name="log_location_title">Місцезнаходження</string>
     <string name="log_location_description">Додати позицію у лог.</string>
     <string name="use_gps_title">Використовувати GPS</string>
@@ -113,8 +102,6 @@
     <string name="on_off_strobe">Вимк./Увімк./Строб</string>
     <string name="soft_medium_hard">Плавні/Середні/Жорсткі</string>
     <string name="alarm_mode_title">Режим попередження</string>
-    <string name="alarm_settings_description">Налаштувати попередження.</string>
-    <string name="calibration_title">Калібрування</string>
     <string name="is_gotway_mcm_title">У мене Gotway MCM</string>
     <string name="is_gotway_mcm_description">Фікс для Gotway MCM</string>
     <string name="battery_voltage_title">Напруга батареї</string>
@@ -135,8 +122,6 @@
     <string name="pedal_horizont_description">Зміна кута нахилу педалей</string>
     <string name="volt">В</string>
     <string name="watt">Вт</string>
-    <string name="enable_auto_upload_title">Увімкнути аплоад?</string>
-    <string name="enable_auto_upload_descriprion">Автоматичний автоаплоад використовує мобільні дані</string>
     <string name="alarm_text_current">Перевцщення сили струму</string>
     <string name="alarm_text_speed">Перевищення швидкості</string>
     <string name="alarm_text_temperature">Перевищення температури</string>
@@ -145,17 +130,12 @@
     <string name="bluetooth_required">Необхідно увімкнути Bluetooth</string>
     <string name="connect_to_wheel">Підключити до колеса</string>
     <string name="connected">Підключено</string>
-    <string name="connection_failed">Сбій підключення</string>
     <string name="connection_lost_at">Підключення розірвано</string>
-    <string name="current_on_dial_description">Відображати силу струму у зовнішньому колі</string>
-    <string name="current_on_dial_title">Сила струму у зовнішньому колі</string>
     <string name="devices">Пристрої</string>
     <string name="disable_phone_beep_title">Відключити звукові сповіщення</string>
     <string name="disable_phone_beep_description">Пристрій без звуку, але буде відправляти дані на MiBand</string>
-    <string name="disconnect">Відключити</string>
     <string name="disconnect_from_wheel">Відключитись від колеса</string>
     <string name="disconnected">Відключено</string>
-    <string name="error_bluetooth_not_initialised">Сбій Bluetooth</string>
     <string name="error_bluetooth_not_supported">Bluetooth не підтримується</string>
     <string name="garmin_connectiq_enable_description">Активувати Garmin ConnectIQ</string>
     <string name="garmin_connectiq_enable_title">Garmin ConnectIQ</string>
@@ -178,7 +158,6 @@
     <string name="start_data_service">Логування заборонено</string>
     <string name="start_pebble_service">Запустити Pebble екран</string>
     <string name="stop_data_service">Зупинити логування</string>
-    <string name="stop_pebble_service">Закрити екран Pebble</string>
     <string name="unknown_device">Невідомий пристрій</string>
     <string name="use_better_percents_description">Використовувати поліпшену формулу розрахунку % замість формули виробника колеса</string>
     <string name="use_better_percents_title">Покращені відсотки</string>
@@ -187,16 +166,12 @@
     <string name="use_pip_mode_description">Переходити у режим картинка-в-картинці замість згортання</string>
     <string name="use_pip_mode_title">Картинка-в-Картинці</string>
     <string name="voltage_sag">Просадка напруги</string>
-    <string name="waiting_for_device">Очікування пристрою</string>
     <string name="max_speed_dial_description">Максимальне значення зовнішньої шкали (швидкість та сила струму)</string>
     <string name="connection_sound_description">Програвати звуки підключення і відключення колеса</string>
     <string name="connection_sound_title">Звуки підключення колеса</string>
     <string name="sec">сек</string>
     <string name="pwm_based_alarms_title">Алармі по PWM</string>
     <string name="pwm_based_alarms_description">Алармі при поточній напрузі та можливостях колеса</string>
-    <string name="altered_alarms_pref_title">Налаштування опцій змінених попереджень</string>
-    <string name="alarm_factor3_title">PWM третього попередження</string>
-    <string name="alarm_factor3_description">Повинен бути більше за другий</string>
     <string name="warning_speed_title">Попереднє попередження</string>
     <string name="warning_speed_description">Попереднє попередження по швидкості (0 = вимк)</string>
     <string name="no_connection_sound_title">Періодичні оповіщення в разі втрати підключення</string>
@@ -207,12 +182,10 @@
     <string name="rotation_speed_description">Максимальна швидкість обертання колеса</string>
     <string name="rotation_voltage_title">Напруга розкрутки</string>
     <string name="rotation_voltage_description">Напруга при якій вимірювалася швидкість розкрутки</string>
-    <string name="start_miband_alert">Запустити сповіщення MiBand</string>
     <string name="show_settings">Показати меню налаштування</string>
     <string name="maxcurrent">Макс. струм</string>
     <string name="maxpower">Макс. потужність</string>
     <string name="titlealarm">Перевищення!</string>
-    <string name="titlealarm_text">Режим алармів</string>
     <string name="alarmmiband">Аларми на MiBand</string>
     <string name="minmiband">Базове відображення на Mi Band 4/5/6/Amazfit</string>
     <string name="medmiband">Додаткове відображення на Mi Band 4/5/6</string>
@@ -223,17 +196,11 @@
     <string name="notification_text_min">[ШВИДК.] \n  - %1$.0f к/г \n  - %2$.0f мкс  \n\n[БАТАРЕЯ] \n  - %3$d %%  \n\n[ШЛЯХ] \n  - %4$.1f км</string>
     <string name="notification_text_med">[ШВИДК.] \n  - %1$.0f к/г \n  - %2$.0f сер \n  - %3$.0f pwm  \n\n[IНШЕ] \n  - %4$d %% \n  - %5$d °C \n  - %6$.1f км</string>
     <string name="notification_text_max">[ШВИДК.] \n  ⭐ %1$.0f к/г \n  🔥 %2$.0f топ \n  🙈 %3$.0f сер  \n\n[ДАНI] \n  💧 %4$d %% \n  ⚡ %5$.2f В \n  💪 %6$.0f Вт \n  ❄ %7$d °C  \n\n[ШЛЯХ] \n  👣 %8$.1f км</string>
-    <string name="notification_text_alarm">[ДАНI] \n  - %1$.0f к/г \n  - %2$.1f A \n  - %3$.2f В \n  - %4$d %% \n  - %5$d °C</string>
-    <string name="notification_text_alarm_not">Дані аларму: %1$.0f к/г | %2$.1f A | %3$.2f В | %4$d %% | %5$d °C</string>
-    <string name="mode_learn">Початківець</string>
-    <string name="mode_play">Експерт</string>
-    <string name="mode_ride">Звичайний</string>
     <string name="maxtemperature">Макс. температура</string>
     <string name="output">Прогальність</string>
     <string name="cpuload">Використання CPU</string>
     <string name="charging_status">Зарядка</string>
     <string name="max_pwm">Макс PWM</string>
-    <string name="time_charge_title">Час заряджання</string>
     <string name="charging">Зарядка</string>
     <string name="discharging">Розрядка</string>
     <string name="profile_name_title">Змінити назву профілю</string>
@@ -333,7 +300,6 @@
     <string name="transport_mode_description">Даний режим не дозволяє колесу стартувати під час транспортування</string>
     <string name="go_home_mode_title">Режим Go Home</string>
     <string name="go_home_mode_description">Дозволяє поїздку при низькому рівні батареї</string>
-    <string name="no_file_read_permission">Дозвіл на читання файлу не наданий</string>
     <string name="fancier_mode_description">Режим для досвідчених - 55 км/г.</string>
     <string name="speaker_mute_description">Вимкнути динамік колеса</string>
     <string name="speaker_mute_title">Без звуку</string>
@@ -342,18 +308,14 @@
     <string name="reset_trip">Скинути поїздку</string>
     <string name="reset_trip_message">Ви впевнені, що хочете скинути дистанцію поїздки?</string>
     <string name="wheel_calibration">Калібрування колеса</string>
-    <string name="wheel_beep">Гудок колеса</string>
     <string name="power_off_message">Колесо буде вимкнено, продовжити?</string>
     <string name="wheel_calibration_message_inmo">Будь-ласка переведіть колесо в позицію паркування</string>
-    <string name="wheel_calibration_message_begode">Будь-ласка переведіть колесо в центральну позицію, та перезавантажте</string>
-    <string name="wheel_calibration_message_kingsong">Будь-ласка переведіть колесо в центральну позицію, та перезавантажте</string>
     <string name="ec_choose_transport">[ec] Виберіть транспорт</string>
     <string name="private_policy_title">Політика конфиденційності</string>
     <string name="private_policy_agree">Я прочитав та погоджуюся</string>
     <string name="current_mac">MAC адреса</string>
     <string name="log_location_pop_up">Ця програма збирає дані про місцезнаходження, щоб додавати дані GPS у логах CSV, коли WheelLog працює у фоновому режимі або коли екран вимкнено. Дані GPS не збираються при відключенні EUC.</string>
     <string name="private_policy"><![CDATA[Перед використанням програми потрібно прийняти <a href =\"https://github.com/Wheellog/Wheellog.Android/wiki/Privacy-Policy\">Політику використання</a> та <a href=\"https://github.com/Wheellog/Wheellog.Android/wiki/Terms-&-Conditions\">Загальні положення</a>]]></string>
-    <string name="manual_upload_to_ec">Завантажити на electro.club</string>
     <string name="show_page_trips_title">Сторінка поїздок</string>
     <string name="drl_settings_title">Увімкнути DRL</string>
     <string name="share">Поділитися</string>
@@ -370,8 +332,6 @@
     <string name="notification_buttons_description">Налаштування кнопок в панелі сповіщення</string>
     <string name="notification_text_ajdm_theme">%1$.1f км/г | %2$d%% | %3$d°C | %4$.1f км</string>
     <string name="icon_light">Піктобрама ліхтарика</string>
-    <string name="miband_on_mainscreen_title">Mi Band в головному меню</string>
-    <string name="miband_on_mainscreen_description">Показувати кнопку Mi Band на головному екрані замість кнопки годинника</string>
     <string name="miband_desc">Змінити режим Mi Band</string>
     <string name="alarm_text_pwm">PWM аларм</string>
     <string name="newton">Н*м</string>
@@ -381,7 +341,6 @@
     <string name="alarm_factor2_description">Значення PWM, коли попередження перестануть перериватися</string>
     <string name="bmsSn">с.н.</string>
     <string name="bmsFw">Прошивка</string>
-    <string name="files_not_found">Аудіо файлів не знайдено</string>
     <string name="replace_info_block">Замінити \"%s\" на:</string>
     <string name="auto_log_when_moving_description">Автоматичне записування логу тільки при швидкості більше ніж</string>
     <string name="auto_log_when_moving_title">Автолог тільки після початку руху</string>
