@@ -283,7 +283,7 @@ class MainActivity : AppCompatActivity() {
                     if (alarmType < 4) {
                         showSnackBar(
                             resources.getString(R.string.alarm_text_speed) + String.format(
-                                ": %.1f",
+                                Locale.ROOT, ": %.1f",
                                 alarmValue
                             ), 3000
                         )
@@ -291,7 +291,7 @@ class MainActivity : AppCompatActivity() {
                     if (alarmType == ALARM_TYPE.CURRENT.value) {
                         showSnackBar(
                             resources.getString(R.string.alarm_text_current) + String.format(
-                                ": %.1f",
+                                Locale.ROOT, ": %.1f",
                                 alarmValue
                             ), 3000
                         )
@@ -299,7 +299,7 @@ class MainActivity : AppCompatActivity() {
                     if (alarmType == ALARM_TYPE.TEMPERATURE.value) {
                         showSnackBar(
                             resources.getString(R.string.alarm_text_temperature) + String.format(
-                                ": %.1f",
+                                Locale.ROOT, ": %.1f",
                                 alarmValue
                             ), 3000
                         )
@@ -307,7 +307,7 @@ class MainActivity : AppCompatActivity() {
                     if (alarmType == ALARM_TYPE.PWM.value) {
                         showSnackBar(
                             resources.getString(R.string.alarm_text_pwm) + String.format(
-                                ": %.1f",
+                                Locale.ROOT, ": %.1f",
                                 alarmValue * 100
                             ), 3000
                         )
@@ -315,7 +315,7 @@ class MainActivity : AppCompatActivity() {
                     if (alarmType == ALARM_TYPE.BATTERY.value) {
                         showSnackBar(
                             resources.getString(R.string.alarm_text_battery) + String.format(
-                                ": %.0f",
+                                Locale.ROOT, ": %.0f",
                                 alarmValue
                             ), 3000
                         )
