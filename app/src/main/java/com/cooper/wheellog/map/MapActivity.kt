@@ -1,7 +1,7 @@
 package com.cooper.wheellog.map
 
 import android.content.Context
-import android.net.Uri
+import androidx.core.net.toUri
 import android.os.Build
 import android.os.Bundle
 import androidx.activity.viewModels
@@ -97,7 +97,7 @@ class MapActivity : AppCompatActivity() {
     private fun parseFile(extras: Bundle): TripData {
         val title = extras.getString("title", "undefined")
         val path = extras.getString("path", "undefined")
-        val uri = Uri.parse(extras.getString("uri", "undefined"))
+        val uri = extras.getString("uri", "undefined").toUri()
         val tripData = TripData(title)
         val list = TripParser.parseFile(applicationContext, title, path, uri).first
         tripData.errorMessage = TripParser.lastError

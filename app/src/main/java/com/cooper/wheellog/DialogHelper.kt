@@ -8,6 +8,7 @@ import android.content.Intent
 import android.graphics.Color
 import android.location.LocationManager
 import android.net.Uri
+import androidx.core.net.toUri
 import android.os.Build
 import android.os.PowerManager
 import android.provider.Settings
@@ -64,7 +65,7 @@ object DialogHelper : KoinComponent {
         }
         val intent = Intent().apply {
             action = Settings.ACTION_REQUEST_IGNORE_BATTERY_OPTIMIZATIONS
-            data = Uri.parse("package:" + context.packageName)
+            data = "package:${context.packageName}".toUri()
         }
         context.startActivity(intent)
     }

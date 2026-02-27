@@ -3,6 +3,8 @@ package com.cooper.wheellog
 import android.content.Context
 import android.content.SharedPreferences
 import android.net.Uri
+import androidx.core.content.edit
+import androidx.core.net.toUri
 import androidx.appcompat.app.AppCompatDelegate.MODE_NIGHT_UNSPECIFIED
 import androidx.preference.PreferenceManager
 import com.cooper.wheellog.utils.MiBandEnum
@@ -29,7 +31,8 @@ class AppConfig(var context: Context): KoinComponent {
         // Clear all preferences if they are incompatible
         val version = getValue("versionSettings", -1)
         val currentVer = 1
-        if (version < currentVer && sharedPreferences.edit()?.clear()?.commit() == true) {
+        if (version < currentVer) {
+            sharedPreferences.edit(commit = true) { clear() }
             setValue("versionSettings", currentVer)
             PreferenceManager.setDefaultValues(context, R.xml.preferences, false)
         }
@@ -176,7 +179,7 @@ class AppConfig(var context: Context): KoinComponent {
         set(value) = setValue(R.string.custom_beep, value)
 
     var beepFile: Uri
-        get() = Uri.parse(getValue(R.string.beep_file, ""))
+        get() = getValue(R.string.beep_file, "").toUri()
         set(value) = setValue(R.string.beep_file, value.toString())
 
     var customBeepTimeLimit: Float
@@ -822,14 +825,16 @@ class AppConfig(var context: Context): KoinComponent {
     }
 
     fun setValue(key: String, value: Any?) {
-        when (value) {
-            is String? -> sharedPreferences.edit().putString(key, value).apply()
-            is String -> sharedPreferences.edit().putString(key, value).apply()
-            is Int -> sharedPreferences.edit().putInt(key, value).apply()
-            is Float -> sharedPreferences.edit().putFloat(key, value).apply()
-            is Double -> sharedPreferences.edit().putFloat(key, value.toFloat()).apply()
-            is Boolean -> sharedPreferences.edit().putBoolean(key, value).apply()
-            is Long -> sharedPreferences.edit().putLong(key, value).apply()
+        sharedPreferences.edit {
+            when (value) {
+                is String? -> putString(key, value)
+                is String -> putString(key, value)
+                is Int -> putInt(key, value)
+                is Float -> putFloat(key, value)
+                is Double -> putFloat(key, value.toFloat())
+                is Boolean -> putBoolean(key, value)
+                is Long -> putLong(key, value)
+            }
         }
     }
 
