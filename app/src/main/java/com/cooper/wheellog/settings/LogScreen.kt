@@ -1,7 +1,6 @@
 package com.cooper.wheellog.settings
 
 import android.Manifest
-import android.app.Activity
 import android.content.Intent
 import android.location.LocationManager
 import android.net.Uri
@@ -16,6 +15,7 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
+import androidx.activity.compose.LocalActivity
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.core.content.ContextCompat
@@ -86,6 +86,7 @@ fun logScreen(appConfig: AppConfig = koinInject())
         }
 
         val context = LocalContext.current
+        val currentActivity = LocalActivity.current!!
         var locationDependency by remember { mutableStateOf(appConfig.logLocationData) }
 
         switchPref(
@@ -197,7 +198,6 @@ fun logScreen(appConfig: AppConfig = koinInject())
                 }
 
                 if (autoUploadDependency.value && WheelData.getInstance().isConnected) {
-                    val activity = LocalContext.current as Activity
                     clickablePref(
                         name = stringResource(R.string.select_garage_ec_title),
                         desc = appConfig.ecGarage ?: "",
@@ -205,7 +205,7 @@ fun logScreen(appConfig: AppConfig = koinInject())
                         appConfig.ecGarage = null
                         ElectroClub.instance.getAndSelectGarageByMacOrShowChooseDialog(
                             mac = "",
-                            activity = activity,
+                            activity = currentActivity,
                         ) { }
                     }
                 }
@@ -227,7 +227,7 @@ fun logScreen(appConfig: AppConfig = koinInject())
                                 if (success) {
                                     ElectroClub.instance.getAndSelectGarageByMacOrShowChooseDialog(
                                         WheelData.getInstance().mac,
-                                        context as Activity
+                                        currentActivity
                                     ) { }
                                 }
                                 continuation.resume(Pair(success, errorMessage))
@@ -255,7 +255,7 @@ fun logScreen(appConfig: AppConfig = koinInject())
         }
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q || BuildConfig.DEBUG) {
-            val activity = (LocalContext.current as? MainActivity)
+            val activity = (LocalActivity.current as? MainActivity)
             clickablePref(
                 name = stringResource(R.string.import_log),
             ) {

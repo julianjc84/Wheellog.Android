@@ -8,7 +8,7 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.*
-import androidx.compose.ui.platform.LocalContext
+import androidx.activity.compose.LocalActivity
 import androidx.compose.ui.res.*
 import androidx.compose.ui.unit.*
 import androidx.navigation.NavHostController
@@ -37,7 +37,7 @@ private fun settingsAppBar(
     navigateUp: () -> Unit,
     modifier: Modifier = Modifier
 ) {
-    val activity = (LocalContext.current as? MainActivity)
+    val activity = (LocalActivity.current as? MainActivity)
     TopAppBar(
         title = { Text(stringResource(currentScreen.title)) },
         colors = TopAppBarDefaults.mediumTopAppBarColors(
