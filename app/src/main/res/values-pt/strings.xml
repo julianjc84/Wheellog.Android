@@ -5,7 +5,7 @@
 	<string name="error_bluetooth_not_supported">Bluetooth não é suportado no seu dispositivo.</string>
 	<string name="error_bluetooth_not_initialised">Não foi possível iniciar Bluetooth, saindo</string>
 	<string name="bluetooth_required">Bluetooth é necessário mas não está ligado.</string>
-	<string name="bluetooth_direct_connect_failed">Conexão direta falhou. Procurando monociclo...</string>
+	<string name="bluetooth_direct_connect_failed">Conexão direta falhou. Procurando monociclo\u2026</string>
 	<string name="back_to_exit">Pressione VOLTAR novamente para sair</string>
 	<string name="scan">Procurar</string>
 	<string name="stop">Parar</string>
@@ -25,7 +25,7 @@
 	<string name="stop_data_service">Parar Registro</string>
 	<string name="started_logging">Iniciar registro</string>
 	<string name="search_for_wheel">Procurar Monociclo</string>
-	<string name="scanning">Procurando...</string>
+	<string name="scanning">Procurando\u2026</string>
 	<string name="devices">Dispositivos</string>
 	<string name="mode_learn">Iniciante</string>
 	<string name="mode_play">Especialista</string>

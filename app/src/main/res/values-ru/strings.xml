@@ -40,7 +40,7 @@
     <string name="speed">Скорость</string>
     <string name="mode">Режим работы</string>
     <string name="started_logging">Начало записи</string>
-    <string name="scanning">Поиск...</string>
+    <string name="scanning">Поиск\u2026</string>
     <string name="back_to_exit">Повторно нажмите назад для выхода</string>
     <string name="kmh">км/ч</string>
     <string name="mph">миль/ч</string>
@@ -541,7 +541,7 @@
     <string name="taillight_settings_title">Задний свет</string>
     <string name="drl_settings_description_nb">Включить ангельский глаз</string>
     <string name="taillight_settings_description">Вкл/выкл задний свет</string>
-    <string name="alarm_text_battery_v">[ЗАРЯД][...]</string>
+    <string name="alarm_text_battery_v">[ЗАРЯД][\u2026]</string>
     <string name="wearos_pages_title">Страницы WearOS</string>
     <string name="wearos_pages_description">Выбрать страницы для WearOS</string>
     <string name="pwm_tiltback_alarm">FW mod - подъем по PWM</string>
@@ -593,7 +593,7 @@
     <string name="bmsTemp1Env">Вн. Темп. 1</string>
     <string name="bmsTemp2Env">Вн. Темп. 2</string>
     <string name="bmsHumidity1Env">Вн. Влажность 1</string>
-    <string name="bmsSemiVoltage1">Напряжение 1/2</string>
+    <string name="bmsSemiVoltage1">Напряжение ½</string>
     <string name="started_raw_logging">Начало записи RAW лога в</string>
     <string name="stopped_raw_logging">Остановлено логирование в</string>
     <string name="paused_raw_logging">Приостановлена записаь лога (файл открыт)</string>
