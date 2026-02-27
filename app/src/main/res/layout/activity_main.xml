@@ -33,7 +33,7 @@
 
         <android.widget.TextClock
             android:id="@+id/textClock"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/prime"
             android:format12Hour="HH:mm:ss"

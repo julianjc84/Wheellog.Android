@@ -201,11 +201,12 @@ class MainActivity : AppCompatActivity() {
                 else -> speedModel.title = getString(R.string.speed)
             }
             try {
-                this.enterPictureInPictureMode(
-                    PictureInPictureParams.Builder()
-                        .setAspectRatio(Rational(16, 9))
-                        .build()
-                )
+                val pipBuilder = PictureInPictureParams.Builder()
+                    .setAspectRatio(Rational(16, 9))
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+                    pipBuilder.setAutoEnterEnabled(true)
+                }
+                this.enterPictureInPictureMode(pipBuilder.build())
             } catch (e: RuntimeException) {
                 Toast.makeText(this, R.string.pip_failed, Toast.LENGTH_SHORT).show()
             }

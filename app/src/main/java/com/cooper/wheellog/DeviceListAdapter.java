@@ -79,7 +79,7 @@ public class DeviceListAdapter extends BaseAdapter {
         ViewHolder viewHolder;
         // General ListView optimization code.
         if (view == null) {
-            view = mInflator.inflate(R.layout.scan_list_item, null);
+            view = mInflator.inflate(R.layout.scan_list_item, viewGroup, false);
             viewHolder = new ViewHolder();
             viewHolder.deviceAddress = view.findViewById(R.id.device_address);
             viewHolder.deviceName = view.findViewById(R.id.device_name);
