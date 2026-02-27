@@ -184,4 +184,27 @@
 	<string name="pedal_horizont_description">Regolazione inclinazione pedane</string>
     <string name="volt">V</string>
 	<string name="watt">W</string>
+    <string name="enter_custom_value">Inserisci valore personalizzato</string>
+    <string name="whkm">Wh/km</string>
+    <string name="whmi">Wh/mi</string>
+    <string name="wh">Wh</string>
+    <string name="sec">sec</string>
+    <string name="min">min</string>
+    <string name="today">Oggi</string>
+    <string name="pip_failed">Impossibile avviare la modalità picture-in-picture</string>
+    <string name="show_settings">Mostra menu impostazioni</string>
+    <string name="miband_desc">Cambia modalità Mi Band</string>
+    <string name="started_raw_logging">Registrazione RAW avviata in</string>
+    <string name="stopped_raw_logging">Registrazione RAW interrotta in</string>
+    <string name="paused_raw_logging">Registrazione RAW in pausa (file aperto)</string>
+    <string name="resumed_raw_logging">Registrazione RAW ripresa in</string>
+    <string name="output">Ciclo di lavoro</string>
+    <string name="cpuload">Carico CPU</string>
+    <string name="charging_status">In carica</string>
+    <string name="consumption">Consumo</string>
+    <string name="sleep_timer">Timer di spegnimento</string>
+    <string name="voltage_sag">Calo di tensione</string>
+    <string name="phase_current">Corrente di fase</string>
+    <string name="maxtemperature">Temp. max.</string>
+    <string name="pwm">PWM</string>
 </resources>

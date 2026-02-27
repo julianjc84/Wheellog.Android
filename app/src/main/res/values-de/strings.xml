@@ -184,4 +184,27 @@
 	<string name="pedal_horizont_description">Horizontale Justierung</string>
     <string name="volt">V</string>
 	<string name="watt">W</string>
+    <string name="enter_custom_value">Eigenen Wert eingeben</string>
+    <string name="whkm">Wh/km</string>
+    <string name="whmi">Wh/mi</string>
+    <string name="wh">Wh</string>
+    <string name="sec">Sek</string>
+    <string name="min">Min</string>
+    <string name="today">Heute</string>
+    <string name="pip_failed">Bild-in-Bild-Modus konnte nicht gestartet werden</string>
+    <string name="show_settings">Einstellungsmenü anzeigen</string>
+    <string name="miband_desc">Mi Band-Modus ändern</string>
+    <string name="started_raw_logging">RAW-Protokollierung gestartet in</string>
+    <string name="stopped_raw_logging">RAW-Protokollierung gestoppt in</string>
+    <string name="paused_raw_logging">RAW-Protokollierung pausiert (Datei geöffnet)</string>
+    <string name="resumed_raw_logging">RAW-Protokollierung fortgesetzt in</string>
+    <string name="output">Tastgrad</string>
+    <string name="cpuload">CPU-Auslastung</string>
+    <string name="charging_status">Laden</string>
+    <string name="consumption">Verbrauch</string>
+    <string name="sleep_timer">Schlaf-Timer</string>
+    <string name="voltage_sag">Spannungsabfall</string>
+    <string name="phase_current">Phasenstrom</string>
+    <string name="maxtemperature">Max. Temp.</string>
+    <string name="pwm">PWM</string>
 </resources>

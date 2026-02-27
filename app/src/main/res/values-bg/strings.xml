@@ -184,4 +184,27 @@
 	<string name="pedal_horizont_description">Хоризонтална настройка на педалите</string>
     <string name="volt">V</string>
 	<string name="watt">W</string>
+    <string name="enter_custom_value">Въведете собствена стойност</string>
+    <string name="whkm">Wh/км</string>
+    <string name="whmi">Wh/ми</string>
+    <string name="wh">Wh</string>
+    <string name="sec">сек</string>
+    <string name="min">мин</string>
+    <string name="today">Днес</string>
+    <string name="pip_failed">Неуспешно влизане в режим картина в картината</string>
+    <string name="show_settings">Покажи менюто с настройки</string>
+    <string name="miband_desc">Смяна на режим Mi Band</string>
+    <string name="started_raw_logging">RAW записването стартирано в</string>
+    <string name="stopped_raw_logging">RAW записването спряно в</string>
+    <string name="paused_raw_logging">RAW записването на пауза (файлът е отворен)</string>
+    <string name="resumed_raw_logging">RAW записването възобновено в</string>
+    <string name="output">Работен цикъл</string>
+    <string name="cpuload">Натоварване на CPU</string>
+    <string name="charging_status">Зареждане</string>
+    <string name="consumption">Консумация</string>
+    <string name="sleep_timer">Таймер за заспиване</string>
+    <string name="voltage_sag">Спад на напрежението</string>
+    <string name="phase_current">Фазов ток</string>
+    <string name="maxtemperature">Макс. темп.</string>
+    <string name="pwm">PWM</string>
 </resources>

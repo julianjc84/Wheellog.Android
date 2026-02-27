@@ -178,5 +178,29 @@
     <string name="pedal_horizont_description">水平踏板调整</string>
     <string name="volt">V</string>
     <string name="watt">W</string>
-
+    <string name="enter_custom_value">输入自定义值</string>
+    <string name="whkm">Wh/km</string>
+    <string name="whmi">Wh/mi</string>
+    <string name="wh">Wh</string>
+    <string name="sec">秒</string>
+    <string name="min">分</string>
+    <string name="garmin_connectiq_missing_app_message">您的ConnectIQ设备上未安装WheelLog应用。请先安装小部件后重试。</string>
+    <string name="garmin_connectiq_service_unavailable_message">ConnectIQ服务不可用。</string>
+    <string name="today">今天</string>
+    <string name="pip_failed">进入画中画模式失败</string>
+    <string name="show_settings">显示设置菜单</string>
+    <string name="miband_desc">更改小米手环模式</string>
+    <string name="started_raw_logging">已开始RAW日志记录到</string>
+    <string name="stopped_raw_logging">已停止RAW日志记录到</string>
+    <string name="paused_raw_logging">RAW日志记录已暂停（文件已打开）</string>
+    <string name="resumed_raw_logging">已恢复RAW日志记录到</string>
+    <string name="output">占空比</string>
+    <string name="cpuload">CPU负载</string>
+    <string name="charging_status">充电中</string>
+    <string name="consumption">能耗</string>
+    <string name="sleep_timer">睡眠定时器</string>
+    <string name="voltage_sag">电压下降</string>
+    <string name="phase_current">相电流</string>
+    <string name="maxtemperature">最高温度</string>
+    <string name="pwm">PWM</string>
 </resources>
