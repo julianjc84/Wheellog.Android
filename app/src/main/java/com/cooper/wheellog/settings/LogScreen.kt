@@ -205,7 +205,7 @@ fun logScreen(appConfig: AppConfig = koinInject())
                         appConfig.ecGarage = null
                         ElectroClub.instance.getAndSelectGarageByMacOrShowChooseDialog(
                             mac = "",
-                            activity = activity,
+                            activity = currentActivity,
                         ) { }
                     }
                 }
@@ -255,7 +255,7 @@ fun logScreen(appConfig: AppConfig = koinInject())
         }
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q || BuildConfig.DEBUG) {
-            val activity = (LocalContext.current as? MainActivity)
+            val activity = (LocalActivity.current as? MainActivity)
             clickablePref(
                 name = stringResource(R.string.import_log),
             ) {
