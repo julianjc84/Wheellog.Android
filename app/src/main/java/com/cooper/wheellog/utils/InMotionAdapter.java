@@ -992,7 +992,7 @@ public class InMotionAdapter extends BaseAdapter {
             msg.id = IDValue.RideMode.getValue();
             msg.ch = 5;
             msg.type = CanFrame.DataFrame.getValue();
-			msg.data = new byte[]{1, 0, 0, 0, value[1], value[0], 0, 0};
+            msg.data = new byte[]{1, 0, 0, 0, value[1], value[0], 0, 0};
 
             return msg;
         }
@@ -1056,7 +1056,7 @@ public class InMotionAdapter extends BaseAdapter {
             msg.id = IDValue.RideMode.getValue();
             msg.ch = 5;
             msg.type = CanFrame.DataFrame.getValue();
-			msg.data = new byte[]{0, 0, 0, 0, t[3], t[2], t[1], t[0]};
+            msg.data = new byte[]{0, 0, 0, 0, t[3], t[2], t[1], t[0]};
 
             return msg;
         }
