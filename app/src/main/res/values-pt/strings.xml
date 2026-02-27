@@ -163,4 +163,27 @@
 	<string name="pedal_horizont_description">Ajuste horizontal dos pedais</string>
     <string name="volt">V</string>
 	<string name="watt">W</string>
+    <string name="enter_custom_value">Inserir valor personalizado</string>
+    <string name="whkm">Wh/km</string>
+    <string name="whmi">Wh/mi</string>
+    <string name="wh">Wh</string>
+    <string name="sec">seg</string>
+    <string name="min">min</string>
+    <string name="today">Hoje</string>
+    <string name="pip_failed">Falha ao entrar no modo picture-in-picture</string>
+    <string name="show_settings">Mostrar menu de configurações</string>
+    <string name="miband_desc">Alterar modo Mi Band</string>
+    <string name="started_raw_logging">Registro RAW iniciado em</string>
+    <string name="stopped_raw_logging">Registro RAW parado em</string>
+    <string name="paused_raw_logging">Registro RAW pausado (arquivo aberto)</string>
+    <string name="resumed_raw_logging">Registro RAW retomado em</string>
+    <string name="output">Ciclo de trabalho</string>
+    <string name="cpuload">Carga de CPU</string>
+    <string name="charging_status">Carregando</string>
+    <string name="consumption">Consumo</string>
+    <string name="sleep_timer">Temporizador de suspensão</string>
+    <string name="voltage_sag">Queda de tensão</string>
+    <string name="phase_current">Corrente de fase</string>
+    <string name="maxtemperature">Temp. máx.</string>
+    <string name="pwm">PWM</string>
 </resources>

@@ -553,4 +553,6 @@
     <string name="dashboard_pages_category_title">Страницы</string>
     <string name="audio_category_title">Звук</string>
     <string name="connection_category_title">Подключение</string>
+    <string name="pip_failed">Не удалось войти в режим «картинка в картинке»</string>
+    <string name="pwm">PWM</string>
 </resources>

@@ -366,4 +366,18 @@
     <string name="measurement_systems_category_title">Системи вимірювання</string>
     <string name="garmin_connectiq_use_beta_title">Бета компаньон Garmin</string>
     <string name="garmin_connectiq_use_beta_description">Використовувати бета-версію компаньона замість стабільного</string>
+    <string name="whkm">Вт·год/км</string>
+    <string name="whmi">Вт·год/миль</string>
+    <string name="wh">Вт·год</string>
+    <string name="min">хв</string>
+    <string name="today">Сьогодні</string>
+    <string name="pip_failed">Не вдалося увійти в режим «картинка в картинці»</string>
+    <string name="started_raw_logging">Розпочато запис RAW логу в</string>
+    <string name="stopped_raw_logging">Зупинено запис RAW логу в</string>
+    <string name="paused_raw_logging">Призупинено запис RAW логу (файл відкритий)</string>
+    <string name="resumed_raw_logging">Відновлено запис RAW логу в</string>
+    <string name="consumption">Споживання</string>
+    <string name="sleep_timer">Таймер сну</string>
+    <string name="phase_current">Фазний струм</string>
+    <string name="pwm">PWM</string>
 </resources>

@@ -163,4 +163,27 @@
 	<string name="pedal_horizont_description">Οριζόντια ρύθμιση πεντάλ</string>
     <string name="volt">V</string>
 	<string name="watt">W</string>
+    <string name="enter_custom_value">Εισάγετε προσαρμοσμένη τιμή</string>
+    <string name="whkm">Wh/km</string>
+    <string name="whmi">Wh/mi</string>
+    <string name="wh">Wh</string>
+    <string name="sec">δευτ</string>
+    <string name="min">λεπ</string>
+    <string name="today">Σήμερα</string>
+    <string name="pip_failed">Αποτυχία εισόδου σε λειτουργία εικόνα σε εικόνα</string>
+    <string name="show_settings">Εμφάνιση μενού ρυθμίσεων</string>
+    <string name="miband_desc">Αλλαγή λειτουργίας Mi Band</string>
+    <string name="started_raw_logging">Εκκίνηση καταγραφής RAW σε</string>
+    <string name="stopped_raw_logging">Διακοπή καταγραφής RAW σε</string>
+    <string name="paused_raw_logging">Παύση καταγραφής RAW (αρχείο ανοιχτό)</string>
+    <string name="resumed_raw_logging">Συνέχιση καταγραφής RAW σε</string>
+    <string name="output">Κύκλος λειτουργίας</string>
+    <string name="cpuload">Φόρτος CPU</string>
+    <string name="charging_status">Φόρτιση</string>
+    <string name="consumption">Κατανάλωση</string>
+    <string name="sleep_timer">Χρονοδιακόπτης ύπνου</string>
+    <string name="voltage_sag">Πτώση τάσης</string>
+    <string name="phase_current">Φασικό ρεύμα</string>
+    <string name="maxtemperature">Μέγ. θερμ.</string>
+    <string name="pwm">PWM</string>
 </resources>
