@@ -3,11 +3,11 @@
 buildscript {
     ext.kotlin_version = '2.2.10'
     ext.compose_version = '1.9.2'
-    ext.lifecycle_version = '2.9.4'
-    ext.room_version = '2.7.2' // Form 2.8.0 minSDK API 23
+    ext.lifecycle_version = '2.9.4' // From 2.10.0 minSDK API 23
+    ext.room_version = '2.7.2' // From 2.8.0 minSDK API 23
     ext.material_version = '1.13.0'
     ext.appcompact_version = '1.7.1'
-    ext.core_ktx_version = '1.15.0' // Form 1.16.0 minSDK API 23
+    ext.core_ktx_version = '1.15.0' // From 1.16.0 minSDK API 23
     repositories {
         mavenCentral()
         google()
