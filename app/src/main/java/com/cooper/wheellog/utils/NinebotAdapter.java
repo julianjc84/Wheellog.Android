@@ -63,7 +63,7 @@ public class NinebotAdapter extends BaseAdapter {
         };
         Timber.i("Ninebot timer started");
         keepAliveTimer = new Timer();
-        keepAliveTimer.scheduleAtFixedRate(timerTask, 0, 25);
+        keepAliveTimer.schedule(timerTask, 0, 25);
     }
 
     public void resetConnection() {

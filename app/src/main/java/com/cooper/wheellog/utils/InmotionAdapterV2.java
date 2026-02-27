@@ -267,7 +267,7 @@ public class InmotionAdapterV2 extends BaseAdapter {
             }
         };
         keepAliveTimer = new Timer();
-        keepAliveTimer.scheduleAtFixedRate(timerTask, 100, 25);
+        keepAliveTimer.schedule(timerTask, 100, 25);
     }
 
     @Override

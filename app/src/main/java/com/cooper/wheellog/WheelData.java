@@ -171,12 +171,12 @@ public class WheelData {
             }
         };
         ridingTimerControl = new Timer();
-        ridingTimerControl.scheduleAtFixedRate(timerTask, 0, 1000);
+        ridingTimerControl.schedule(timerTask, 0, 1000);
     }
 
     ///// test purpose, please let it be
     public void startAlarmTest() {
-        new Timer().scheduleAtFixedRate(new TimerTask() {
+        new Timer().schedule(new TimerTask() {
             @Override
             public void run() {
                 Context mContext =  KoinJavaComponent.get(Context.class);

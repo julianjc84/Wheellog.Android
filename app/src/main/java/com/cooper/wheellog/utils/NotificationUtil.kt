@@ -190,7 +190,7 @@ class NotificationUtil(private val context: Context): KoinComponent {
     fun updateKostilTimer() {
         if (appConfig.mibandFixRs && kostilTimer == null) {
             kostilTimer = Timer().apply {
-                scheduleAtFixedRate(object : TimerTask() {
+                schedule(object : TimerTask() {
                     override fun run() {
                         val wd = WheelData.getInstance()
                         if (wd == null) {
